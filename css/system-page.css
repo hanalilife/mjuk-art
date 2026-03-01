@@ -1,0 +1,252 @@
+/* =========================
+   基礎
+========================= */
+
+body {
+  background: #FBF9EF;
+  color: #5f5246;
+}
+
+.container {
+  width: 1100px;
+  margin: 0 auto;
+  padding: 60px 0 120px;
+}
+
+/* =========================
+   模組 Header
+========================= */
+.module-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+.module-header::after {
+  content: "";
+  position: absolute;
+  left:20px;
+  right: 0;
+  top:96%;
+  transform: translateY(-50%);
+  height: 3px;
+  background: #a89582;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+
+
+/* 左邊膠囊 */
+.module-badge {
+  background: #a89582;
+  color: white;
+  padding: 7px 46px;
+  border-radius: 999px;
+  font-size: 22px;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 2;   /* ← 把線壓到下面 */
+}
+
+
+/* 右側主標 + 線 */
+
+.module-header-main h2 {
+  font-size: 22px;
+  color: #3f372f;
+}
+.flow-pill {
+  display: inline-block;
+  background: #a89582;
+  color: white;
+  padding: 6px 35px;
+  border-radius: 999px;
+  margin: 26px auto 16px;
+  font-size: 16px;
+}
+
+.module {
+  text-align: left;
+}
+
+.flow-pill {
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+}
+.module-flow{
+  text-align: center;
+}
+.module-flow-text {
+  font-size: 16px;
+  letter-spacing: 1px;
+  margin-bottom: 36px;
+}
+
+
+
+/* =========================
+   圖片卡片
+========================= */
+img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+/* =========================
+   整個區塊
+========================= */
+
+.decision-section {
+  background: #ECE5D3;
+
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
+
+/* =========================
+   內容寬度控制
+========================= */
+
+.decision-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 100px;
+}
+
+
+/* =========================
+   標題
+========================= */
+
+.section-title {
+  font-size: 28px;
+  margin-bottom: 18px;
+  position: relative;
+  padding-left: 10px;
+  border-left:#3f372f 2px solid;
+}
+/* =========================
+   問題說明
+========================= */
+
+.problem-block {
+  padding-left: 50px;
+  margin-bottom: 100px;
+}
+
+.problem-block ol {
+  padding-left: 20px;
+  line-height: 2;
+  font-size: 16px;
+}
+
+
+/* =========================
+   設計決策主區
+========================= */
+
+.decision-block {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+
+/* 左側文字 */
+
+.decision-text ul {
+  padding-left: 20px;
+  line-height: 2;
+  font-size: 16px;
+}
+
+
+/* 右側影片 */
+
+.decision-video video {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+}
+/* =========================
+   卡片列（置中）
+========================= */
+
+.card-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1100px;
+  margin: 80px auto;
+}
+
+
+/* =========================
+   卡片樣式（精準還原）
+========================= */
+
+.info-card {
+  background: #ECE5D3;
+  padding: 40px 36px;
+  padding-bottom: 100px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+
+/* 標題 */
+
+.info-card h4 {
+  margin: 0 0 20px;
+  font-size: 22px;
+  text-align: center;
+  position: relative;
+}
+
+
+/* 標題底線 */
+
+.info-card h4::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #A69682;
+  margin: 3px auto 0;
+}
+
+
+/* 內文 */
+.info-card ul {
+  list-style-position: outside;
+  padding-left: 28px;
+  line-height: 2.4;
+}
+
+.info-card p {
+  line-height: 2;
+}
+
+
+
+/* =========================
+   RWD
+========================= */
+
+@media (max-width: 900px) {
+
+  .container {
+    width: 92%;
+  }
+
+  .two-col,
+  .card-row {
+    grid-template-columns: 1fr;
+  }
+
+}

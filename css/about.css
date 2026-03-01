@@ -1,0 +1,199 @@
+/* =========================
+ABOUT PAGE FULLSCREEN
+Fit Window Size
+========================= */
+
+html,body{
+  height:100%;
+  margin:0;
+  overflow:hidden;
+  }
+  
+  /* 整頁高度扣掉 NAV */
+  .about-page{
+  display:flex;
+  height:calc(100vh - 80px);
+  background:#F5F1EE;
+  }
+  
+  /* 左側導覽 */
+  
+  .about-nav{
+  width:220px;
+  padding:0 20px;
+  border-right:2px solid #bfb6ae;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:22px;
+  }
+/* 選單 */
+
+.about-nav a{
+  position:relative;
+  color:#5f5246;
+  text-decoration:none;
+  font-size:14px;
+  letter-spacing:1px;
+  opacity:.85;
+  cursor:pointer;
+  transition:opacity .25s ease;
+  }
+  
+  
+  /* 滑鼠移過 */
+  .about-nav a:hover{
+  opacity:1;
+  }
+  /* 底線 */
+  .about-nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-4px;
+  width:0;
+  height:1px;
+  background:#5f5246;
+  transition:.25s ease;
+  
+  }
+  /* Hover暫時顯示 */
+  .about-nav a:hover::after{
+  width:100%;
+  
+  }
+  /* ⭐ 點擊固定 */
+  .about-nav a.active{
+  opacity:1;
+  
+  }
+  
+  .about-nav a.active::after{
+  width:100%;
+  
+  }
+  /* 主內容 */
+  .about-main{
+  flex:1;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 80px;
+  }
+  
+  /* 文字 */
+  .about-text{
+  color:#3d3732;
+  }
+
+  /* 有圖片 */
+.about-main.has-image .about-text{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  width:450px;
+  }
+  
+  /* 沒圖片 */
+  
+  .about-main.no-image .about-text{
+  max-width:500px;
+  }
+  
+  .about-text h1{
+  font-size:34px;
+  margin-bottom:12px;
+  }
+  
+  .about-text h3{
+  font-size:18px;
+  margin-bottom:26px;
+  color:#5f5246;
+  }
+
+  .about-text h5{
+    font-size:16px;
+    padding-bottom:20px;
+    color:#5f5246;
+    }
+  .about-text p{
+  font-size:16px;
+  line-height:1.9;
+  margin-bottom:18px;
+  }
+  .about-text ul {
+    padding-left: 20px;
+  }
+  
+  .about-text li {
+    display: list-item;  
+    line-height: 1.8;
+  }
+
+  /* =========================
+MODULE GRID
+========================= */
+.module-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-top:40px;
+  }
+  /* 卡片 */
+  .module-card{
+    background: linear-gradient(
+      125deg,
+      #FFF9EB 0%,
+      #FFFEFC 100%
+    );
+    box-shadow:0 4px 6px rgba(0,0,0,0.1);
+    padding:10px;
+    border-radius:20px;
+    text-align:center;
+    transition:0.2s;
+  
+  }
+  /* icon */
+  .icon {
+    width:48px;
+    height:48px;
+    background-image:url("/assets/sprites/feature-sprite.png");
+    background-repeat:no-repeat;
+    background-size:200px auto;
+    margin:0 auto;
+    }
+    /* 第一排 */
+.icon-archive{
+  background-position:-10px -10px;
+  }
+  .icon-tag{
+  background-position:-80px -10px;
+  }
+  .icon-search{
+  background-position:-143px -10px;
+  }
+  /* 第二排 */
+  .icon-card{
+  background-position:-10px -68px;
+  }
+  .icon-drag{
+  background-position:-64px -68px;
+  }
+  .icon-db{
+  background-position:-108px -68px;
+  transform:scale(1.15);
+  }
+  .icon-package{
+  background-position:-145px -68px;
+  transform:scale(1.15);
+  }
+  /* hover */
+  
+  .module-card:hover{
+  
+  transform:translateY(-6px);
+  
+  box-shadow:0 25px 35px rgba(0,0,0,0.12);
+  
+  }
+  
