@@ -163,7 +163,7 @@ MODULE GRID
   .icon {
     width:48px;
     height:48px;
-    background-image:url("/assets/sprites/feature-sprite.png");
+    background-image:url("../assets/sprites/feature-sprite.png");
     background-repeat:no-repeat;
     background-size:200px auto;
     margin:0 auto;
