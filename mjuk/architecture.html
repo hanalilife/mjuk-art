@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mjuk-art</title>
+  <meta name="description" content="AI蛋糕圖片搜尋與建檔系統，結合圖片比對、標籤分類與報價輔助的實務工具專案作品。">
+  <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/architecture.css">
+</head>
+<body>
+<div id="nav-container"></div>
+<section class="arch">
+
+  <div class="arch-badge">
+    <h3>系統分層架構圖</h3></div>
+  
+  
+  <!-- 前端層 -->
+  
+  <div class="layer-title">前端層</div>
+  
+  <div class="timeline">
+  
+  <div class="line"></div>
+  
+  <div class="step s1">
+  <div class="node">1</div>
+  <div class="icon icon-user"></div>
+  <div class="text">
+  <h3>前台操作人員</h3>
+  <p>拖曳客戶圖片搜尋</p>
+  </div>
+  </div>
+  
+  <div class="step s2">
+  <div class="node">2</div>
+  <div class="icon icon-upload"></div>
+  <div class="text">
+  <h3>搜尋介面 UI</h3>
+  <p>Drag & Drop 圖片上傳</p>
+  </div>
+  </div>
+  
+  <div class="step s3">
+  <div class="node">3</div>
+  <div class="icon icon-frontend"></div>
+  <div class="text">
+  <h3>Frontend</h3>
+  <p>HTML / CSS / JS</p>
+  </div>
+  </div>
+  
+  </div>
+  
+  
+  
+  <!-- API層 -->
+  
+  <div class="layer-divider"></div>
+  
+  <div class="layer-title">API層</div>
+  
+  <div class="timeline">
+  
+  <div class="line"></div>
+  
+  <div class="step s4">
+  <div class="node">4</div>
+  <div class="icon icon-api"></div>
+  <div class="text">
+  <h3>API呼叫</h3>
+  <p>POST /search</p>
+  </div>
+  </div>
+  
+  <div class="step s5">
+  <div class="node">5</div>
+  <div class="icon icon-backend"></div>
+  <div class="text">
+  <h3>FastAPI Backend</h3>
+  <p>接收圖片</p>
+  </div>
+  </div>
+  
+  </div>
+  
+  
+  
+  <!-- AI層 -->
+  
+  <div class="layer-divider"></div>
+  
+  <div class="layer-title">AI搜尋層</div>
+  
+  <div class="timeline">
+  
+  <div class="line"></div>
+  
+  <div class="step s6">
+  <div class="node">6</div>
+  <div class="icon icon-clip"></div>
+  <div class="text">
+  <h3>CLIP Embedding</h3>
+  <p>影像轉向量表示</p>
+  </div>
+  </div>
+  
+  <div class="step s7">
+  <div class="node">7</div>
+  <div class="icon icon-vector"></div>
+  <div class="text">
+  <h3>向量比對</h3>
+  <p>cosine similarity</p>
+  </div>
+  </div>
+  
+  </div>
+  
+  
+  
+  <!-- 資料層 -->
+  
+  <div class="layer-divider"></div>
+  
+  <div class="layer-title">資料層</div>
+  
+  <div class="timeline">
+  
+  <div class="line"></div>
+  
+  <div class="step s8">
+  <div class="node">8</div>
+  <div class="icon icon-csv"></div>
+  <div class="text">
+  <h3>資料來源</h3>
+  <p>CSV + JSON tags</p>
+  </div>
+  </div>
+  
+  <div class="step s9">
+  <div class="node">9</div>
+  <div class="icon icon-result"></div>
+  <div class="text">
+  <h3>搜尋結果</h3>
+  <p>圖片 + 價格卡</p>
+  </div>
+  </div>
+  
+  </div>
+  <div class="arch-badge">
+    <h3>關鍵技術決策理由</h3></div>
+  
+  <table class="tech-table">
+  
+  <tr>
+  <th>技術</th>
+  <th>選擇原因</th>
+  </tr>
+  
+  <tr>
+  <td>HTML/CSS/JS</td>
+  <td>可快速客製UI，無框架依賴</td>
+  </tr>
+  
+  <tr>
+  <td>FastAPI</td>
+  <td>輕量、高效能、快速建立API</td>
+  </tr>
+  
+  <tr>
+  <td>CLIP</td>
+  <td>可跨風格圖片比對，不依賴標籤</td>
+  </tr>
+  
+  <tr>
+  <td>CSV</td>
+  <td>現場人員可維護，不需資料庫知識</td>
+  </tr>
+  
+  <tr>
+  <td>JSON tags</td>
+  <td>支援多層標籤關係</td>
+  </tr>
+  
+  <tr>
+  <td>本地部署</td>
+  <td>符合公司資料安全需求</td>
+  </tr>
+  
+  <tr>
+  <td>PIL</td>
+  <td>可直接產生報價圖卡</td>
+  </tr>
+  
+  </table>
+  
+  
+  <div class="arch-badge">
+    <h3>未來規劃</h3></div>
+  
+  <div class="future-row">
+  
+  <div class="future-card">
+  
+  <h3>功能升級</h3>
+  
+  <ul>
+  <li>自動標籤 AI 輔助</li>
+  <li>圖片特徵自動分類</li>
+  <li>價格推薦</li>
+  </ul>
+  
+  </div>
+  
+  
+  <div class="future-card">
+  
+  <h3>架構演進</h3>
+  
+  <ul>
+  <li>雲端部署</li>
+  <li>向量資料庫</li>
+  <li>多資料來源</li>
+  </ul>
+  
+  </div>
+  
+  
+  <div class="future-card">
+  
+  <h3>產品擴展</h3>
+  
+  <ul>
+  <li>設計模組</li>
+  <li>自動估價</li>
+  <li>多語系</li>
+  </ul>
+  
+  </div>
+  
+  </div>
+  </section>
+  <script src="js/layout.js"></script>
+</body>
+</html>

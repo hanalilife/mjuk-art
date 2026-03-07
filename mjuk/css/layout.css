@@ -1,0 +1,446 @@
+/* =========================
+Coming Soon Tooltip
+========================= */
+
+.coming-soon-wrap{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+}
+
+.coming-soon-link{
+  position:relative;
+  font-size:14px;
+  color:#5f5246;
+  text-decoration:none;
+  padding-bottom:4px;
+  cursor:default;
+  opacity:.5;
+}
+
+.coming-soon-link::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:2px;
+  background:#a89582;
+  transition:.25s;
+}
+
+.coming-soon-tip{
+  position:absolute;
+  top:calc(100% + 12px);
+  left:50%;
+  transform:translateX(-50%) translateY(4px);
+  background:#f5f1ee;
+  border:1px solid rgba(168,149,130,.3);
+  border-radius:8px;
+  padding:6px 14px;
+  font-size:12px;
+  color:#5f5246;
+  white-space:nowrap;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .2s ease, transform .2s ease;
+  box-shadow:0 4px 12px rgba(0,0,0,.08);
+  z-index:1001;
+}
+
+.coming-soon-tip::before{
+  content:"";
+  position:absolute;
+  top:-6px;
+  left:50%;
+  transform:translateX(-50%);
+  border-width:0 6px 6px 6px;
+  border-style:solid;
+  border-color:transparent transparent #f5f1ee transparent;
+}
+
+.coming-soon-wrap:hover .coming-soon-tip{
+  opacity:1;
+  transform:translateX(-50%) translateY(0);
+}
+
+/* 手機版 mobile-nav 內 */
+.coming-soon-wrap.mobile{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:4px;
+}
+
+.coming-soon-wrap.mobile .coming-soon-link{
+  font-size:20px;
+  font-weight:400;
+  letter-spacing:1px;
+  color:#3f372f;
+}
+
+.coming-soon-wrap.mobile .coming-soon-tip{
+  position:static;
+  transform:none;
+  opacity:1;
+  font-size:11px;
+  padding:3px 10px;
+  pointer-events:none;
+  background:#f5f1ee;
+}
+
+@media (max-width:480px){
+  .coming-soon-wrap.mobile .coming-soon-link{
+    font-size:18px;
+  }
+}
+
+
+.nav{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:1000;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 30px ;
+  transition:all .3s ease;
+}
+
+/* ⭐ 畫底線 */
+.nav::after{
+  content:"";
+  position:absolute;
+  left:50px;
+  right:50px;
+  bottom:0;
+  height:1px;
+  background:#bda999;
+  opacity:.6;
+  transition:opacity .35s ease;
+}
+ 
+  /* 滑動後 */
+  .nav.scrolled{
+    background:rgba(255,255,255,0.45);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    box-shadow:0 5px 18px rgba(0,0,0,.06);
+  }
+
+  .nav.scrolled::after{
+    opacity:0;
+  }
+  
+  .logo {
+  width:140px;
+  height:48px;
+  background:url("../assets/images/logo.svg") no-repeat center;
+  background-size:contain;
+  }
+  
+  .hamburger{
+    display:none;
+    cursor:pointer;
+    }
+    .hamburger img{
+    width:28px;
+    height:28px;
+    display:block;
+    
+    }
+  
+  
+  .nav__menu {
+  display:flex;
+  gap:36px;
+  
+  }
+  
+  .nav__menu a{
+    position:relative;
+    font-size:14px;
+    color:#5f5246;
+    text-decoration:none;
+    padding-bottom:4px;
+    
+    }
+    .nav__menu a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-6px;
+      width:0;
+      height:2px;
+      background:#a89582;
+      transition:.25s;
+      }
+      .nav__menu a:hover::after{
+      width:100%;
+      
+      }
+      .nav__menu a.active::after{
+      width:100%;
+
+      }
+/* =========================
+Fullscreen Menu
+========================= */
+
+.mobile-menu{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+display:flex;             
+flex-direction:column;
+/* 奶茶毛玻璃 */
+background:rgba(245,241,238,0.75);
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
+opacity:0;
+pointer-events:none;
+transition:.35s;
+z-index:2000;
+
+}
+/* 開啟 */
+.mobile-menu.open{
+opacity:1;
+pointer-events:auto;
+
+}
+
+/* =========================
+TOP
+========================= */
+
+.mobile-top{
+position:absolute;
+top:25px;
+left:25px;
+right:25px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+}
+
+/* LOGO */
+.mobile-logo{
+width:130px;
+height:42px;
+background:url("../assets/images/logo.svg") no-repeat center;
+background-size:contain;
+
+}
+
+/* X */
+.mobile-close{
+font-size:26px;
+cursor:pointer;
+color:#5f5246;
+}
+
+
+/* =========================
+中間選單
+========================= */
+
+.mobile-nav{    
+  flex:1;          
+  display:flex;
+  flex-direction:column;
+  justify-content:center; 
+  align-items:center;   
+  gap:12px;
+  
+  }
+
+/* 大字 */
+.mobile-nav a{
+font-size:20px;
+color:#3f372f;
+text-decoration:none;
+font-weight:400;
+letter-spacing:1px;
+}
+
+/* hover */
+.mobile-nav a:hover{
+opacity:.7;
+}
+
+/* =========================
+底部
+========================= */
+.mobile-footer{   
+  text-align:center;
+  margin-bottom:40px;
+  }
+  .mobile-ig {
+    display:block;
+    width:40px;
+    height:40px ;
+    margin:0 auto 16px auto;
+    border-radius:50%;
+    background-color:#e8d9bf;
+    background-image:url("../assets/icons/Instagram (1).svg");
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:18px;
+    transition:.2s;
+  }
+
+/* copyright */
+.mobile-copyright{
+font-size:12px;
+color:#8c7e70;
+margin-bottom:8px;
+}
+
+
+/* 智財 */
+.mobile-ip{
+font-size:11px;
+color:#a69a8e;
+line-height:1.6;
+padding:0 30px;
+}
+/* =====================
+1200px Desktop 小螢幕
+===================== */
+
+@media (max-width:1200px){
+
+  .nav{
+  padding:16px 0;
+  }
+  
+  .nav__line{
+  margin:0 40px;
+  }
+  
+  }
+  
+  /* =====================
+  1024px Laptop
+  ===================== */
+  
+  @media (max-width:1024px){
+  
+  .nav{
+  padding:14px 0;
+  }
+  
+  .logo{
+  width:130px;
+  height:44px;
+  }
+  
+  .nav__menu{
+  gap:26px;
+  }
+  
+  .nav__line{
+  margin:0 30px;
+  }
+  
+  }
+  
+  /* =====================
+  768px Tablet
+  ===================== */
+  
+  @media (max-width:768px){
+  
+  /* nav縮小 */
+  
+  .nav{
+  padding:14px 50px;
+  }
+  
+  /* logo縮小 */
+  
+  .logo{
+  width:120px;
+  height:40px;
+  }
+  
+  /* 漢堡出現 */
+  
+  .hamburger{
+  display:block;
+  }
+  
+  /* 桌面選單隱藏 */
+  
+  .nav__menu{
+  display:none;
+  }
+  
+  /* 底線縮小 */
+  
+  .nav__line{
+  margin:0 20px;
+  }
+  
+  }
+  
+  
+  
+  /* =====================
+  480px Mobile
+  ===================== */
+  
+  @media (max-width:480px){
+  
+  .nav{
+  padding:12px 16px;
+  }
+  
+  /* logo再縮小 */
+  
+  .logo{
+  width:110px;
+  height:36px;
+  }
+  
+  /* hamburger小一點 */
+  
+  .hamburger img{
+  width:24px;
+  height:24px;
+  }
+  
+  /* mobile menu 字縮小 */
+  
+  .mobile-nav a{
+  font-size:18px;
+  }
+  
+  /* IG icon */
+  
+  .mobile-ig{
+  width:36px;
+  height:36px;
+  background-size:16px;
+  }
+  
+  /* copyright */
+  
+  .mobile-copyright{
+  font-size:11px;
+  }
+  
+  /* IP文字 */
+  
+  .mobile-ip{
+  font-size:10px;
+  padding:0 20px;
+  }
+  
+  }

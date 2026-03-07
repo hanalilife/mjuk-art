@@ -1,0 +1,498 @@
+/* =========================
+   基礎
+========================= */
+
+body {
+  padding-top:80px;
+  background: #FBF9EF;
+  color: #5f5246;
+}
+
+/* 模組分頁導覽 */
+.module-nav {
+  position: sticky;
+  top: 80px;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  background: rgba(251,249,239,0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #ddd5c8;
+  padding: 0;
+}
+
+.module-nav__item {
+  padding: 14px 40px;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: #8a7a6e;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.module-nav__item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: #a89582;
+  transform: scaleX(0);
+  transition: transform 0.25s ease;
+}
+
+.module-nav__item:hover {
+  color: #5f5246;
+}
+
+.module-nav__item.active {
+  color: #3f372f;
+  font-weight: 600;
+}
+
+.module-nav__item.active::after {
+  transform: scaleX(1);
+}
+
+.container {
+  width: 1100px;
+  margin: 0 auto;
+  padding: 60px 0 120px;
+}
+
+/* =========================
+   模組 Header
+========================= */
+.module-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+.module-header::after {
+  content: "";
+  position: absolute;
+  left:20px;
+  right: 0;
+  top:96%;
+  transform: translateY(-50%);
+  height: 3px;
+  background: #a89582;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+
+/* 左邊膠囊 */
+.module-badge {
+  background: #a89582;
+  color: white;
+  padding: 7px 46px;
+  border-radius: 999px;
+  font-size: 22px;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 2;   /* ← 把線壓到下面 */
+}
+
+
+/* 右側主標 + 線 */
+
+.module-header-main h2 {
+  font-size: 22px;
+  color: #3f372f;
+}
+.flow-pill {
+  display: inline-block;
+  background: #a89582;
+  color: white;
+  padding: 6px 35px;
+  border-radius: 999px;
+  margin: 26px auto 16px;
+  font-size: 16px;
+}
+
+.module {
+  text-align: left;
+}
+
+.flow-pill {
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+}
+.module-flow{
+  text-align: center;
+}
+.module-flow-text {
+  font-size: 16px;
+  letter-spacing: 1px;
+  margin-bottom: 36px;
+}
+
+
+
+/* =========================
+   圖片卡片
+========================= */
+img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+/* =========================
+   整個區塊
+========================= */
+
+.decision-section {
+  background: #ECE5D3;
+
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
+
+/* =========================
+   內容寬度控制
+========================= */
+
+.decision-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 100px;
+}
+
+
+/* =========================
+   標題
+========================= */
+
+.section-title {
+  font-size: 28px;
+  margin-bottom: 18px;
+  position: relative;
+  padding-left: 10px;
+  border-left:#3f372f 2px solid;
+}
+/* =========================
+   問題說明
+========================= */
+
+.problem-block {
+  padding-left: 50px;
+  margin-bottom: 100px;
+}
+
+.problem-block ol {
+  padding-left: 20px;
+  line-height: 2;
+  font-size: 16px;
+}
+
+
+/* =========================
+   設計決策主區
+========================= */
+
+.decision-block {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+
+/* 左側文字 */
+
+.decision-text ul {
+  padding-left: 20px;
+  line-height: 2;
+  font-size: 16px;
+}
+
+
+/* 右側影片 */
+
+.decision-video video {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+}
+/* =========================
+   卡片列（置中）
+========================= */
+
+.card-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1100px;
+  margin: 80px auto;
+}
+
+
+/* =========================
+   卡片樣式（精準還原）
+========================= */
+
+.info-card {
+  background: #ECE5D3;
+  padding: 40px 36px;
+  padding-bottom: 100px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+
+/* 標題 */
+
+.info-card h4 {
+  margin: 0 0 20px;
+  font-size: 22px;
+  text-align: center;
+  position: relative;
+}
+
+
+/* 標題底線 */
+
+.info-card h4::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #A69682;
+  margin: 3px auto 0;
+}
+
+
+/* 內文 */
+.info-card ul {
+  list-style-position: outside;
+  padding-left: 28px;
+  line-height: 2.4;
+}
+
+.info-card p {
+  line-height: 2;
+}
+
+/* =========================
+1200px 以下
+========================= */
+
+@media (max-width:1200px){
+
+  .container{
+  width:90%;
+  }
+  
+  .decision-inner{
+  padding:70px 60px;
+  }
+  
+  .decision-block{
+  gap:60px;
+  }
+  
+  .card-row{
+  gap:40px;
+  }
+  
+  }
+
+  /* =========================
+1024px 以下
+========================= */
+
+@media (max-width:1024px){
+
+  .container{
+  width:92%;
+  padding:50px 0 100px;
+  }
+  
+  .module-badge{
+  font-size:20px;
+  padding:6px 36px;
+  }
+  
+
+    
+  .module-header-main h2{
+  font-size:18px;
+  }
+  
+  .decision-inner{
+  padding:60px 40px;
+  }
+  
+  .decision-block{
+    grid-template-columns:1fr;
+    gap:40px;
+    text-align:center;
+  }
+  
+  .decision-video{
+    text-align:center;
+  }
+  
+  .decision-video video{
+    max-width:500px;
+    margin:auto;
+  }
+
+  .decision-text{
+    max-width:800px;
+    margin:auto;
+  }
+
+  .decision-text ul{
+    padding-left: 22px; 
+    margin:0 auto;
+    max-width:800px;
+    text-align:left;
+  }
+
+  .section-title{
+    text-align:left;
+    font-size:20px;
+    }
+  .card-row{
+    gap:30px;
+  }
+  
+  .info-card{
+  padding:32px 28px;
+  padding-bottom:80px;
+  }
+
+  }
+
+  @media (max-width:700px){
+
+    .card-row{
+      grid-template-columns:1fr;
+    }
+    .info-card{
+     margin: 0 2%;
+      }
+    }
+  /* =========================
+480px 以下
+========================= */
+
+@media (max-width:480px){
+
+  .container{
+  width:92%;
+  padding:30px 0 60px;
+  }
+  
+  
+  /* Badge */
+  
+  .module-badge{
+  font-size:16px;
+  padding:5px 24px;
+  letter-spacing:1px;
+  }
+  
+  
+  /* 標題 */
+  .module-header-main h2{
+  font-size:18px;
+  }
+
+  /* Flow */
+  .flow-pill{
+  font-size:14px;
+  padding:6px 24px;
+  }
+  
+  /* problem-block */
+  .problem-block{
+  padding-left:20px;
+  }
+
+  /* decision */
+  .decision-block{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+  
+  .decision-video{
+    text-align:center;
+  }
+  
+  .decision-video video{
+    max-width:500px;
+    margin:auto;
+  }
+  .decision-text{
+    width:100%;
+  }
+
+  .decision-text ul{
+    padding-left: 22px; 
+    margin:0 auto;
+    max-width:800px;
+    text-align:left;
+  }
+
+  .decision-inner{
+    max-width:800px; 
+    margin:auto;
+    padding:50px 20px;
+  }
+  
+  .section-title{
+  text-align:left;
+  font-size:20px;
+  }
+  
+  .problem-block ol{
+  font-size:14px;
+  }
+
+  /* 卡片改單欄 */
+  .card-row{
+    display:grid;
+    grid-template-columns:1fr; 
+    gap:20px;
+  }
+
+  /* 卡片 */
+  .info-card{
+  padding:24px 20px;
+  padding-bottom:40px;
+  border-radius:16px;
+  margin:0;
+  }
+
+  
+  .info-card h4{
+  font-size:18px;
+  }
+  
+  .info-card ul{
+  font-size:14px;
+  line-height:2;
+  }
+  
+  .info-card p{
+  font-size:14px;
+  }
+  
+  }
+/* 手機版 module-nav */
+@media (max-width:480px){
+  .module-nav__item{
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}
