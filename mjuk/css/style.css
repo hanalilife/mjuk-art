@@ -428,7 +428,7 @@ body {
   }
   
   
-/* 480px Mobile */
+  /* 480px Mobile */
 
   @media (max-width:480px){
   .hero{
@@ -562,3 +562,4 @@ body {
   transform: translateY(-3px);
   box-shadow: 0 10px 28px rgba(100,80,60,0.1);
 }
+
