@@ -656,7 +656,7 @@ DATA SECTION
   
   }
   .data-section{
-    background:url("/assets/images/data-bg.jpg") repeat-y center 80px;
+    background:url("../assets/images/data-bg.jpg") repeat-y center 80px;
     border-radius:120px;
     overflow:hidden;
   }
@@ -667,7 +667,7 @@ DATA SECTION
       content:""; 
       position:absolute;
       inset:0; 
-      background:url("/assets/images/cream-top.png") no-repeat top center; 
+      background:url("../assets/images/cream-top.png") no-repeat top center; 
       background-repeat:no-repeat;
       background-position:top center; background-size:contain; 
       pointer-events:none; 
@@ -854,12 +854,21 @@ DATA SECTION
   display:flex;
   gap:45px;
   margin-bottom:14px;
-  padding-left:18px;
+  padding-left:0;
+  list-style:none;
   }
   
   .structure-tags li{
   font-size:18px;
-  padding-left:6px;
+  display:flex;
+  align-items:center;
+  gap:4px;
+  }
+  
+  .structure-tags li::before{
+  content:"•";
+  font-size:1em;
+  line-height:1;
   }
   
   /* 內文 */
@@ -1588,7 +1597,6 @@ MOBILE OVERRIDE (fix overflow)
   }
   .structure-tags li{
     font-size: 14px;
-    padding-left:6px;
   }
   .structure-title{
   position:static;
@@ -1764,7 +1772,6 @@ MOBILE OVERRIDE (fix overflow)
 
   .structure-tags li{
     font-size:12px;
-    padding-left:5px;
     }
   
 
