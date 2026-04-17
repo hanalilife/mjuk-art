@@ -1,165 +1,65 @@
-
-function loadPage(page){
-  const contentArea=document.getElementById("contentArea");
-  contentArea.innerHTML=pages[page];
-  /* 判斷有沒有圖片 */
-  if(contentArea.querySelector(".about-image")){
-  contentArea.classList.add("has-image");
-  contentArea.classList.remove("no-image");
-  }
-  else{
-  contentArea.classList.add("no-image");
-  contentArea.classList.remove("has-image");
-  }
-  }
-  function loadPage(page){
-const contentArea =
-document.getElementById("contentArea");
-contentArea.innerHTML=
-pages[page];
-
-
-/* 圖片判斷 */
-if(contentArea.querySelector(".about-image")){
-contentArea.classList.add("has-image");
-contentArea.classList.remove("no-image");
-
-}else{
-contentArea.classList.add("no-image");
-contentArea.classList.remove("has-image");
-
-}
-document.querySelector(
-`.about-nav a[onclick="loadPage('${page}')"]`
-).classList.add("active");
-
-}
-
-const navLinks = document.querySelectorAll(".about-nav a");
-
-navLinks.forEach(link => {
-
-  link.addEventListener("click", function(){
-
-    // 移除所有 active
-    navLinks.forEach(l => l.classList.remove("active"));
-
-    // 加到目前點擊的
-    this.classList.add("active");
-
-  });
-
-});
+/* =========================
+頁面內容
+========================= */
 
 const pages = {
+
   about:`
   <div class="about-text">
   <h1>Hi, 我是Hanali</h1>
-  <h3>
-  打造蛋糕產業的 AI 搜圖與資料系統工具
-  </h3>
+  <h3>從翻糖蛋糕設計師到AI工具設計者</h3>
   <p>
-  我來自客製翻糖蛋糕產業的一線實務環境，
-  目前專注於 AI 應用與系統設計領域。
-  <br>
-  長期在客製製作與接單流程中工作，
-  使我對實際營運流程、
-  資料整理與現場效率問題具有深刻理解。
-  我致力於設計真正能在工作現場使用的 AI 工具，
-  強調可落地性與實際效益。
+  我在客製翻糖蛋糕產業工作多年，熟悉接單、溝通、製作的每一個環節。
+  正因為待在這個現場夠久，我對這些細節有第一手的理解，哪些流程在每天悄悄消耗時間與精力。<br>
+  這套 AI 搜圖與建檔系統，是我從產業痛點出發、自學技術、獨立開發的第一個完整作品。
+  我想做的不是展示技術能力，而是證明一件事：真正好用的工具，應該由懂這個工作的人來設計。
   </p>
-  <h5>
-  關注領域：
-  垂直產業 × AI工具化 × 系統設計 × 工作流程優化
-  </h5>
-  <p>希望成為能將 AI 技術轉化為實際工作工具的應用設計者，讓技術真正解決產業中的具體問題。</p>
+  <h5>關注領域：垂直產業 × AI工具化 × 使用者體驗 × 工作流程優化</h5>
+  
   </div>
   <div class="about-image">
-  <img src="./assets/images/Portrait.png">
+  <img src="./assets/images/Portrait.png" alt="Hanali 個人照">
   </div>
-  
   `,
-  
-  
-  why:`
-  
-  <div class="about-text">
-  
-  <h1>為什麼開始做這套系統?</h1>
-  
-  <p>
-  在客製蛋糕接單流程中，客戶多半以圖片詢問款式與價格。每一次詢問都需要重新翻找歷史作品、比對相似款式、確認尺寸與報價區間，這是每天都會反覆發生的高頻工作。
-當同一天有多位客戶詢問相似風格時，往往需要重複搜尋資料與重複回覆說明，不僅耗時，也容易因個人判斷不同而產生報價落差。
-  </p>
-  
-  <p>
-  在過去的工作經驗中，我曾參與公司委外網站開發的需求溝通過程，也實際看到一個問題：當需求在初期沒有被完整定義，後續每一次調整都會變得困難，修改成本與時間成本都會快速上升，而新增功能往往伴隨持續增加的費用。
-客製化產業的流程與需求高度變動，許多細節只有實際使用者才會理解；若由非產業背景的開發者直接實作，往往需要大量來回溝通，
-才能逐步貼近真實使用情境。<br>
-因此，我決定由自己從實務流程出發設計這套系統。以產業使用者的角度邊開發、邊測試、邊調整功能，讓系統能真正對應現場需求，而不是停留在功能規格文件上的設計。<br>
-這個專案的出發點，是希望把自己曾經遇過的痛點，轉化為能幫助同產業工作者的實用工具。
-  </p>
-  
-  </div>
-  
-  `,
-  
-  modules:`
 
+  why:`
+  <div class="about-text">
+  <h1>為什麼開始做這套系統?</h1>
+  <p>
+  客製蛋糕的作品會越累積越多，客戶詢問時常常拿我們該店的作品來問價。
+  當作品數量到了一定程度，沒有人能記住每一張圖對應的價格區間，每次報價都得重新翻找、比對、確認，
+  這個流程在接單高峰時會不斷重複，耗掉大量時間與精力。
+  </p>
+  <p>
+  另一個契機來自參與委外網站開發的經驗。
+  開發過程中我發現，店家很難在短時間內把自己的需求完整說清楚——不是不清楚自己要什麼，而是沒有時間，也不知道該怎麼描述。
+  需求沒說清楚，後續每一次修改都會變得更困難，做出來的東西也很難真正貼近實際工作方式。<br>
+  這讓我意識到：產業裡的工具，最好由產業裡的人來做。
+  我知道自己在工作中遇到什麼問題、需要什麼功能，這是最直接的優勢。<br>
+  同時我也希望這套系統不只適合我自己用，而是能讓其他店家也能輕鬆上手，真正解決日常工作中的重複負擔。
+  </p>
+  </div>
+  `,
+
+  modules:`
   <div class="about-text module-full">
-  
   <h1>目前完成模組</h1>
-  
   <div class="module-grid">
-  <div class="module-card">
-  <div class="icon icon-archive"></div>
-  <p>圖片建檔與自動命名工具</p>
+  <div class="module-card"><div class="icon icon-archive"></div><p>圖片建檔與自動命名工具</p></div>
+  <div class="module-card"><div class="icon icon-tag"></div><p>多層標籤分類系統</p></div>
+  <div class="module-card"><div class="icon icon-search"></div><p>圖片搜尋介面</p></div>
+  <div class="module-card"><div class="icon icon-card"></div><p>搜尋結果價格卡片產生</p></div>
+  <div class="module-card"><div class="icon icon-drag"></div><p>圖片拖曳搜尋流程</p></div>
+  <div class="module-card"><div class="icon icon-db"></div><p>本地資料庫與向量索引建立</p></div>
+  <div class="module-card"><div class="icon icon-package"></div><p>系統打包部署版本</p></div>
   </div>
-  <div class="module-card">
-  <div class="icon icon-tag"></div>
-  <p>多層標籤分類系統</p>
   </div>
-  <div class="module-card">
-  <div class="icon icon-search"></div>
-  <p>圖片搜尋介面</p>
-  </div>
-  <div class="module-card">
-  <div class="icon icon-card"></div>
-  <p>搜尋結果價格卡片產生</p>
-  </div>
-  <div class="module-card">
-  <div class="icon icon-drag"></div>
-  <p>圖片拖曳搜尋流程</p>
-  </div>
-  
-  
-  <div class="module-card">
-  <div class="icon icon-db"></div>
-  <p>本地資料庫與向量索引建立</p>
-  </div>
-  
-  
-  <div class="module-card">
-  <div class="icon icon-package"></div>
-  <p>系統打包部署版本</p>
-  </div>
-  
-  
-  </div>
-  
-  </div>
-  
   `,
 
   learning:`
-  
   <div class="about-text">
-  
   <h1>技術學習轉換歷程</h1>
-  
-  <p>
-  我的技術學習並非來自正式工程背景，而是從實務需求反推所需能力。
-  </p>
+  <p>我沒有工程背景，所有技術都是為了「做出這個東西」才去學的。<br>每一個知識點的起點，都是一個卡關的實際問題。</p>
   <ul>
   <li>從 HTML / CSS / JavaScript 開始建立前端基礎</li>
   <li>學習 API 概念與前後端資料傳遞</li>
@@ -167,58 +67,70 @@ const pages = {
   <li>導入影像 embedding 與向量相似度搜尋</li>
   <li>建立資料結構與標籤模型</li>
   <li>實作本地部署與工具化流程</li>
-   </ul>
-<p>整個過程以「做出可用工具」為核心，而非只完成教學範例。</p>
+  </ul>
+  <p>這條路不是照課綱走的，但每一步都有真實的用途作為理由。</p>
   </div>
+  `,
 
-  
-  `,
-  
-  
-  
   thinking:`
-  
   <div class="about-text">
-  
   <h1>我的產品思維</h1>
-  
   <p>
-  我的產品設計思考來自實際工作流程，而不是單純技術實現。<br>
-在設計系統時，我會先思考使用者在實際工作中需要完成什麼任務，再決定應該使用什麼技術來實現。<br>
-  我相信好的 AI 工具應該能自然融入既有工作流程，降低學習成本，並實際提升效率，而不是增加新的操作負擔。<br>
-因此在這套系統的設計過程中，我持續透過實際使用情境測試與調整功能，使系統逐步貼近真實需求。<br>
+  我設計系統的起點從來不是「這個技術能做什麼」，而是「這個人在工作中卡在哪裡」。<br>
+  以這套系統為例：在決定用向量搜尋之前，我先確認的是——接單者每天花最多時間在哪個步驟？那個步驟有沒有辦法被省掉或加速？
   </p>
-  
-  
+  <p>
+  我相信一個好的 AI 工具不需要使用者學習新的工作習慣。
+  它應該像一個熟練的助手，悄悄接手那些重複又費神的部分，讓人能把注意力放在真正需要判斷的地方。<br>
+  這是我在每一個功能決策背後，始終在問自己的一件事。
+  </p>
   </div>
-  
   `,
-  
+
   future:`
   <div class="about-text">
   <h1>未來規劃</h1>
   <p>
-  未來我希望持續優化這套系統，使其能支援更多實際工作場景，例如自動標籤生成、搜尋精度優化與資料庫擴展。<br>
-
-同時也希望將這套「圖片即資料」的設計概念延伸至其他客製化產業，探索 AI 在垂直產業工具化上的更多可能性。<br>
-
-長期目標是建立一系列以 AI 為核心的實務工具系統，讓 AI 技術能真正服務於日常工作流程。<br>
+  這套系統目前解決的是「找圖與報價」這個單一場景，但背後的設計邏輯可以走得更遠。<br>
+  接下來我想做的，是讓標籤生成更自動化、讓搜尋結果更精準，並把資料庫擴展到能支援多人協作的規模。
+  </p>
+  <p>
+  更長遠的方向，是把「圖片即資料」這個概念帶進其他客製化產業——
+  任何以視覺溝通為主、需要快速比對歷史案例的工作現場，都可能是下一個應用場景。<br>
+  我想成為那個能把 AI 技術翻譯成產業語言的人，讓工具真正被需要它的人用起來。
   </p>
   </div>
   `
-  };
-  
-  
-  
-  function loadPage(page){
-  
-  document.getElementById("contentArea").innerHTML
-  =pages[page];
-  
+
+};
+
+
+/* =========================
+載入頁面內容
+========================= */
+
+function loadPage(page) {
+
+  const contentArea = document.getElementById("contentArea");
+  if (!contentArea) return;
+
+  contentArea.innerHTML = pages[page];
+
+  /* 圖片判斷 */
+  if (contentArea.querySelector(".about-image")) {
+    contentArea.classList.add("has-image");
+    contentArea.classList.remove("no-image");
+  } else {
+    contentArea.classList.add("no-image");
+    contentArea.classList.remove("has-image");
   }
-  
-  
-  
-  /* 預設載入 */
-  
-  loadPage("about");
+
+  /* active 狀態 */
+  document.querySelectorAll(".about-nav a").forEach(l => l.classList.remove("active"));
+  const activeLink = document.querySelector(`.about-nav a[onclick="loadPage('${page}')"]`);
+  if (activeLink) activeLink.classList.add("active");
+
+}
+
+/* 初始載入預設頁面 */
+loadPage('about');

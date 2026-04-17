@@ -3,27 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>系統介紹</title>
+  <title>系統總覽</title>
   <link rel="icon" type="image/png" href="./assets/images/favicon.png">
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/system-intro.css" />
 </head>
 <body>
-  <!-- ===================== NAV ===================== -->
-
-<header class="nav">
-  <a href="index.html" class="logo"></a>
-
-  <nav class="nav__menu">
-    <a href="system-intro.html">系統總覽</a>
-    <a href="system-page.html">核心模組</a>
-    <a href="architecture.html">技術架構詳解</a>
-    <a href="#">其他作品</a>
-    <a href="about.html">關於 Hanali</a>
-  </nav>
-</header>
-<div class="nav__line"></div>
+  <div id="nav-container"></div>
 <!-- =========================
    HERO
 ========================= -->
@@ -50,7 +37,28 @@
   </div>
 </section>
 
-
+<!-- =========================
+   角色說明 + 技術堆疊
+========================= -->
+<section class="role-section">
+  <div class="role-inner">
+    <div class="role-text">
+      <p class="role-desc">
+        本系統由我獨立規劃與主導實作，涵蓋資料結構設計、AI 搜尋整合與前端介面開發。
+        目前已實際部署於客製蛋糕營運環境中使用。
+      </p>
+    </div>
+    <div class="role-stack">
+      <span class="stack-tag">Python</span>
+      <span class="stack-tag">FastAPI</span>
+      <span class="stack-tag">CLIP</span>
+      <span class="stack-tag">PIL</span>
+      <span class="stack-tag">CSV / JSON</span>
+      <span class="stack-tag">HTML / CSS / JS</span>
+      <span class="stack-tag">本地部署</span>
+    </div>
+  </div>
+</section>
 
 <!-- =========================
    專案背景
@@ -266,9 +274,9 @@
         一張圖多角色、多類型，不重複存放
       </h3>
       <p>
-        透過標籤組合支援多情境搜尋，
-        避免多資料存放，
-        價格不統一。
+        單一圖片透過標籤對應多種分類，
+        無需重複存檔，
+        確保資料唯一性與價格一致。
       </p>
     </div>
     <!-- 右中 -->
@@ -288,8 +296,8 @@
         支援快速報價
       </h3>
       <p>
-        透過標籤組合支援多情境搜尋，
-        避免資料重複與價格不一致問題。
+        搜尋結果同步顯示尺寸、高度與價格，
+        客服無需額外查找即可直接回覆報價。
       </p>
     </div>
   </div>
@@ -303,7 +311,7 @@
     轉換為自動化、可擴充的影像搜尋與報價管線。
   </p>
   <div class="workflow-area">
-
+  <div class="workflow-scale">
   <!-- S型虛線 -->
   <svg  class="workflow-svg" width="730" height="1268" viewBox="0 0 730 1268" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M469.966 1.46655C342.133 28.9665 72.9183 97.8665 1.71826 343.467C-2.78174 418.3 48.0659 617.467 304.466 625.467C485.133 619.967 818.066 694.167 704.466 1034.97C678.966 1116.3 555.366 1276.37 264.966 1265.97" stroke="#9C9C9C" stroke-width="3" stroke-dasharray="9 9"/>
@@ -373,22 +381,24 @@
       </p>
     </div>
   </div>
-
-
   <!-- 卡片5 -->
-  <div class="flow-card card5">
-    <div class="pin"></div>
-    <div class="card-inner">
-      <div class="step">05</div>
-      <h3>回傳搜尋結果與報價資訊</h3>
-      <p>
-        系統同時回傳圖片,尺寸,高度,價格,備註，
-        立即顯示重要資訊，向客戶提供報價與設計參考。
-      </p>
-    </div>
+<div class="flow-card card5">
+  <div class="pin"></div>
+  <div class="card-inner">
+    <div class="step">05</div>
+    <h3>回傳搜尋結果與報價資訊</h3>
+    <p>
+      系統同時回傳圖片、尺寸、高度、價格、備註，
+      立即顯示重要資訊，向客戶提供報價與設計參考。
+    </p>
   </div>
 </div>
-</section>
+
+
+  </div><!-- /.flow-card card5 -->
+  </div><!-- /.workflow-scale -->
+  </div><!-- /.workflow-area -->
+</section><!-- /.workflow-section -->
 <div class="project-bg__highlight">
   將原本仰賴人工經驗的找圖與報價流程，轉為可複製、可擴充的系統化能力。
 </div>
@@ -441,11 +451,11 @@
     <div class="module-tag">
       報價
       <span class="tag-small">
-        （建構中）
+        （規劃中）
       </span>
     </div>
     <p>
-      自動帶入尺寸與價格，
+      自動帶入尺寸與造型樣式，
       快速產出報價
     </p>
   </div>
@@ -473,7 +483,7 @@ DATA SECTION
         
         <div class="data-badge">建檔</div>
         <div class="data-header-main">
-          <h2>建檔是整個系統的資料入口，負責將作品圖片轉換為可搜尋、可報價、可分析的結構化資料資產</h2>
+          <h2>圖片轉換為可搜尋、可報價的結構化資料</h2>
         </div>
       </div>
       <div class="data-flow">
@@ -485,8 +495,8 @@ DATA SECTION
         </div>
       </div>
       <img class="data-ui" src="./assets/images/cake-system-build-workflow.png" alt="">
-    </div>
-  </div>
+    </div><!-- /.data-inner -->
+  </div><!-- /.data-wrap -->
   <!-- 結構化資料設計區 -->
 <section class="data-structure-section">
 
@@ -558,10 +568,8 @@ DATA SECTION
   此資料結構使搜尋、報價與 AI 應用能建立於同一套可靠的資料基礎之上。
   </div>
   </div>
-  </section>
-<!-- =========================
-搜圖區塊（介紹+解決方案）
-========================= -->
+  </section><!-- /.data-structure-section -->
+</section><!-- /.data-section -->
 <section class="data-search-section">
   <div class="data-inner">
   
@@ -676,10 +684,8 @@ DATA SECTION
   </ul>
   </div>
   
-  </div>
-  </div>
-</section>
-</section>
+  </div><!-- /.style-feature-wrap -->
+</section><!-- /.style-feature-section -->
 <script src="js/layout.js"></script>
 </body>
 </html>

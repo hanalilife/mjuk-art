@@ -1,56 +1,83 @@
+/* =========================
+載入共用 NAV
+========================= */
 
-window.addEventListener("scroll",function(){
+fetch("nav.html")
+.then(res => res.text())
+.then(data => {
 
-const nav=document.querySelector(".nav");
+  const container = document.getElementById("nav-container");
+  if(!container) return;
 
-if(window.scrollY>50){
+  container.innerHTML = data;
 
-nav.classList.add("scrolled");
+  /* NAV載入後初始化 */
 
-}else{
+  initMobileMenu();
+  setActiveLink();
+  initNavScroll();
 
-nav.classList.remove("scrolled");
+});
+
+
+/* =========================
+Mobile Menu
+========================= */
+
+function initMobileMenu(){
+
+  const hamburger = document.querySelector(".hamburger");
+  const mobileMenu = document.querySelector(".mobile-menu");
+  const closeBtn = document.querySelector(".mobile-close");
+
+  if(!hamburger || !mobileMenu || !closeBtn) return;
+
+  hamburger.onclick = () => mobileMenu.classList.add("open");
+  closeBtn.onclick = () => mobileMenu.classList.remove("open");
 
 }
 
 
+/* =========================
+Active Menu
+========================= */
 
-});
+function setActiveLink(){
 
-/* 自動判斷 active */
+  const links = document.querySelectorAll(".nav__menu a");
 
-const links=document.querySelectorAll(".nav__menu a");
+  const currentPage = location.pathname.split("/").pop();
 
-const currentPage=location.pathname.split("/").pop();
+  links.forEach(link=>{
 
-links.forEach(link=>{
+    const linkPage = link.getAttribute("href");
 
-const linkPage=link.getAttribute("href");
+    if(linkPage === currentPage){
+      link.classList.add("active");
+    }
 
-if(linkPage===currentPage){
-
-link.classList.add("active");
+  });
 
 }
 
-});
 
-const hamburger=document.querySelector(".hamburger");
+/* =========================
+Nav Scroll Effect
+========================= */
 
-const mobileMenu=document.querySelector(".mobile-menu");
+function initNavScroll(){
 
-const closeBtn=document.querySelector(".mobile-close");
+  const nav = document.querySelector(".nav");
+  if(!nav) return;
 
+  window.addEventListener("scroll", () => {
 
-hamburger.addEventListener("click",function(){
+    if(window.scrollY > 50){
+      nav.classList.add("scrolled");
+    } else {
+      nav.classList.remove("scrolled");
+    }
 
-mobileMenu.classList.add("open");
+  });
 
-});
-
-
-closeBtn.addEventListener("click",function(){
-
-mobileMenu.classList.remove("open");
-
-});
+}

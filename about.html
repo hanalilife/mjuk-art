@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mjuk-art</title>
+  <title>關於我</title>
   <meta name="description" content="AI蛋糕圖片搜尋與建檔系統，結合圖片比對、標籤分類與報價輔助的實務工具專案作品。">
   <link rel="icon" type="image/png" href="./assets/images/favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
@@ -12,30 +12,14 @@
   <link rel="stylesheet" href="css/about.css">
 </head>
 <body>
-  <!-- ===================== NAV ===================== -->
-
-<header class="nav">
-  <a href="index.html" class="logo"></a>
-
-  <nav class="nav__menu">
-    <a href="system-intro.html">系統總覽</a>
-    <a href="system-page.html">核心模組</a>
-    <a href="architecture.html">技術架構詳解</a>
-    <a href="#">其他作品</a>
-    <a href="about.html">關於 Hanali</a>
-  </nav>
-</header>
-<div class="nav__line"></div>
+  <div id="nav-container"></div>
 <!-- =========================
 ABOUT SECTION LAYOUT
 ========================= -->
-<!-- =========================
-ABOUT PAGE
-JS SWITCH CONTENT
-========================= -->
+
 <section class="about-page">
   <div class="about-nav">
-  <a onclick="loadPage('about')">關於我</a>
+  <a onclick="loadPage('about')" class="active">關於我</a>
   <a onclick="loadPage('why')">
   為什麼開始做這套系統
   </a>
@@ -55,11 +39,11 @@ JS SWITCH CONTENT
 
   <div class="about-main"
   id="contentArea">
-  
   </div>
   </section>
-  <script src="js/about.js"></script>
   <script src="js/layout.js"></script>
+  <script src="js/about.js"></script>
+  
 
 </body>
 </html>

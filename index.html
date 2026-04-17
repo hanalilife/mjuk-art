@@ -13,78 +13,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<!-- ===================== NAV ===================== -->
-
-<header class="nav">
-  <a href="index.html" class="logo"></a>
-  <div class="hamburger">
-    <img src="./assets/icons/Align justify.svg" alt="menu">
-    </div>
-  <nav class="nav__menu">
-    <a href="system-intro.html">系統總覽</a>
-    <a href="system-page.html">核心模組</a>
-    <a href="architecture.html">技術架構詳解</a>
-    <a href="#">其他作品</a>
-    <a href="about.html">關於 Hanali</a>
-  </nav>
-</header>
-<!-- ⭐ Fullscreen Menu -->
-
-<div class="mobile-menu">
-
-  <!-- 上方 -->
-  <div class="mobile-top">
-    <a href="index.html" class="logo"></a>
-  <div class="mobile-close">✕</div>
-  
-  </div>
-  
-  
-  <!-- 中間選單 -->
-  
-  <div class="mobile-nav">
-  
-  <a href="system-intro.html">系統總覽</a>
-  
-  <a href="system-page.html">核心模組</a>
-  
-  <a href="architecture.html">技術架構詳解</a>
-  
-  <a href="#">其他作品</a>
-  <a href="about.html">關於 Hanali</a>
-  
-  </div>
-  
-  
-  <!-- 底部資訊 -->
-  
-  <div class="mobile-footer">
-
-    <a class="mobile-ig"
-      href="https://www.instagram.com/mjuk_art"
-      target="_blank"
-      ></a>
-  
-  <div class="mobile-copyright">
-  
-  © 2026 Hanali All Rights Reserved
-  
-  </div>
-  
-  
-  <div class="mobile-ip">
-  
-  AI Cake Image Search System™  
-  All design and system logic are proprietary intellectual property.
-  
-  </div>
-  
-  
-  </div>
-  
-  </div>
-
-<div class="nav__line"></div>
+  <div id="nav-container"></div>
 <!-- ===================== HERO ===================== -->
 <section class="hero">
   <h1 id="greeting" class="hero__title"></h1>
@@ -92,7 +21,7 @@
   </p>
 
   <p id="line2" class="hero__desc fade-target">
-    我是 Hanali，目前專注於 AI 應用與系統設計領域。
+    「我是 Hanali，從產業痛點出發，設計並打造真正被使用的 AI 工具。」
   </p>
 
   <div class="hero__arrow">
@@ -133,28 +62,28 @@
 <!-- 上方問題卡片 -->
   <div class="capability-problems">
     <div class="p-card">
-      <img src="./assets/icons/problem-search-slow.svg">
+      <img src="./assets/icons/problem-search-slow.png">
       <p>找圖慢</p>
     </div>
 
     <div class="p-card">
-      <img src="./assets/icons/problem-quote-slow.svg">
+      <img src="./assets/icons/problem-time.png">
       <p>報價慢</p>
     </div>
 
     <div class="p-card">
-      <img src="./assets/icons/problem-training-hard.svg">
+      <img src="./assets/icons/problem-confused-search.png">
       <p>新人難上手</p>
     </div>
 
     <div class="p-card">
-      <img src="./assets/icons/problem-data-chaos.svg">
+      <img src="./assets/icons/problem-data-overload.png">
       <p>資料混亂</p>
     </div>
   </div>
 
   <!-- 中間氣泡標題 -->
-  <div id="intro-detail" class="intro__bubble">
+  <div id="intro-capability" class="intro__bubble">
     <h4>它能做什麼？</h4>
   </div>
 
@@ -183,33 +112,42 @@
     <a href="system-page.html" class="btn-primary">
       查看核心流程
     </a>
-    <a href="#intro-detail" class="btn-primary">
-      觀看操作示範
-    </a>
+  
   </div>
   
   <!-- 關於我 -->
   <div class="capability-about">
     <h3>我是 Hanali</h3>
     <p>
-      我是一名翻糖客製蛋糕產業背景的實務工作者，
-      正在轉向 AI 應用與前端系統開發領域。
+      從翻糖蛋糕設計師出發，現在專注於為垂直產業打造 AI 工具。
     </p>
 
     <div class="about-contact">
-
-      聯絡我：@mjuk_art
-      
-      <a class="ig-dot"
-      href="https://www.instagram.com/mjuk_art"
-      target="_blank"
-      ></a>
-      
+      <div>
+        <p> 聯絡資訊：</p>
+        <a href="mailto:wufood16228@gmail.com" style="color:inherit;text-decoration:none;">wufood16228@gmail.com</a>
       </div>
+      <div style="margin-top:10px;">
+        @mjuk_art
+        <a class="ig-dot"
+        href="https://www.instagram.com/mjuk_art"
+        target="_blank"
+        ></a>
+      </div>
+    </div>
   </div>
-
+  <div class="mobile-copyright">
+    © 2026 Hanali All Rights Reserved
+    </div>
+  
+    <div class="mobile-ip">
+    AI Cake Image Search System™  
+    All design and system logic are proprietary intellectual property.
+    
+    </div>
 </section>
 <script src="js/layout.js"></script>
 <script src="js/main.js"></script>
+
 </body>
 </html>

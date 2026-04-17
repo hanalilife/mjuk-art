@@ -1,0 +1,276 @@
+body{
+  background-color: #FBF9EF;
+}
+/* =========================
+案例標題區
+========================= */
+.case-header {
+  padding: 100px 120px 20px 120px; 
+  gap: 80px;
+}
+
+/* 主標題 */
+.case-project-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 16px;
+}
+
+/* 左側細線（你圖有那條線） */
+.case-project-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 3px;
+  height: 18px;
+  background: #bfae9c;
+}
+
+/* 說明文字 */
+.case-project-desc {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.7;
+  margin-left: 16px;
+}
+/* =========================
+SECTION：案例展示
+========================= */
+.case-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+  padding: 100px 120px;
+}
+
+/* =========================
+案例底部分隔線
+========================= */
+.case-section {
+  position: relative;
+}
+
+.case-section::after {
+  content: "";
+  position: absolute;
+  left: 120px;
+  right: 120px;
+  bottom: 0;
+  height: 1px;
+  background: #d6cec5;
+}
+
+/* =========================
+左側：圖片區
+========================= */
+.case-visual {
+  position: relative;
+  width: 55%;
+  display: flex;
+  justify-content: center;
+}
+
+/* After 主圖 */
+.after-block {
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+右側：文字區
+========================= */
+.case-content {
+  width: 45%;
+  max-width: 520px;
+}
+
+/* 標題 */
+.case-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+/* 分隔線 */
+.case-divider {
+  width: 100%;
+  height: 2px;
+  background: #bfae9c;
+  margin-bottom: 28px;
+}
+
+/* 內文 */
+.case-text h4 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.case-text ul {
+  margin-bottom: 28px;
+  padding-left: 18px;
+}
+
+.case-text li {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* =========================
+SECTION：設計決策區
+========================= */
+.decision-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100px 120px;
+  background: #f6f3ef;
+  gap: 60px;
+}
+
+/* =========================
+左側
+========================= */
+.decision-left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* 每個區塊 */
+.block h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: #222;
+}
+
+.block ul {
+  padding-left: 18px;
+}
+
+.block li {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #444;
+}
+
+/* =========================
+中間分隔線
+========================= */
+.decision-divider {
+  width: 1px;
+  height: 320px;
+  background: #cbbfb2;
+}
+
+/* =========================
+右側
+========================= */
+.decision-right {
+  width: 40%;
+  text-align: center;
+}
+
+/* Logo */
+.decision-logo {
+  width: 140px;
+  margin-bottom: 24px;
+  margin: 0 auto 24px;
+  display: block;
+  opacity: 0.7;
+}
+
+/* 標題 */
+.decision-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #222;
+}
+
+/* 按鈕 */
+.decision-btn {
+  display: inline-block;
+  padding: 14px 36px;
+  background: #a5947f;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* hover */
+.decision-btn:hover {
+  background: #8f7f6b;
+  transform: translateY(-2px);
+}
+
+/* =========================
+RWD
+========================= */
+@media (max-width: 1024px) {
+  .decision-section {
+    flex-direction: column;
+    padding: 80px 40px;
+  }
+
+  .decision-left,
+  .decision-right {
+    width: 100%;
+  }
+
+  .decision-divider {
+    width: 100%;
+    height: 1px;
+  }
+}
+
+@media (max-width: 640px) {
+  .block li {
+    font-size: 14px;
+  }
+
+  .decision-title {
+    font-size: 18px;
+  }
+
+  .case-section {
+    flex-direction: column;
+    padding: 40px 40px;
+  }
+
+  .case-section::after {
+    left: 20px;
+    right: 20px;
+  }
+
+  .case-visual {
+    width: 100%;
+  }
+
+  .case-content {
+    width: 100%;
+  }
+
+  .before-block {
+    right: 0;
+  }
+  .after-block img {
+    width: 100%;
+  }
+
+  .before-block {
+    width: 140px;
+    bottom: -20px;
+  }
+}

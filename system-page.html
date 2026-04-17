@@ -1,34 +1,28 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <title>系統模組頁</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>系統總覽</title>
   <link rel="icon" type="image/png" href="./assets/images/favicon.png">
-  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/system-page.css">
+  <link rel="stylesheet" href="css/system-page.css" />
 </head>
-
 <body>
+  <div id="nav-container"></div>
 
-<!-- ===================== NAV ===================== -->
-<header class="nav">
-  <a href="index.html" class="logo"></a>
-
-  <nav class="nav__menu">
-    <a href="system-intro.html">系統總覽</a>
-    <a href="system-page.html">核心模組</a>
-    <a href="architecture.html">技術架構詳解</a>
-    <a href="#">其他作品</a>
-    <a href="about.html">關於 Hanali</a>
+  <!-- 模組分頁導覽 -->
+  <nav class="tab-nav">
+    <a href="#section-build" class="tab-nav__item active">建檔</a>
+    <a href="#section-search" class="tab-nav__item">搜圖</a>
+    <a href="#section-style" class="tab-nav__item">款式搜尋</a>
   </nav>
-</header>
-<div class="nav__line"></div>
 <!-- ========================= -->
 <!-- 主內容 -->
 <!-- ========================= -->
 <main class="container">
-  <section class="module">
+  <section class="module" id="section-build">
 
     <!-- ===== 標題列 ===== -->
     <div class="module-header">
@@ -65,7 +59,7 @@
         <ol>
           <li>客製蛋糕作品款式多變，歷史圖片常分散於不同資料夾，命名規則不一致，導致尺寸、價格與設計元素難以回溯。</li>
           <li>分類高度依賴個人經驗，新人難以快速建立搜尋與報價判斷能力。</li>
-        </ul>
+        </ol>
       </div>
       <section class="decision-section">
 
@@ -116,19 +110,19 @@
   <!-- ========================= -->
   <!-- 搜尋模組 -->
   <!-- ========================= -->
-     <div class="module-header">
+     <div class="module-header" id="section-search">
   
       <div class="module-badge">搜圖</div>
   
       <div class="module-header-main">
-        <h2>建立於結構化資料與向量索引之上的相似度比對層</h2>
+        <h2>相似圖片搜尋系統</h2>
       </div>
   
     </div>
       <!-- ===== 圖片 ===== -->
    <img src="./assets/images/cake-system-search.png" alt="">
    <div class="module-header">
-    <div class="module-badge">圖片搜尋與相似比對模組</div>
+    <div class="module-badge">圖片搜尋與相似比對</div>
   </div>
      <!-- 問題說明 -->
      <div class="problem-block">
@@ -138,7 +132,7 @@
         <li>客戶以圖片詢問為主，人工翻找歷史作品效率低且容易漏判，圖片長期未被查詢時，也常因分類位置不明而難以定位。</li>
         <li>作品分類高度依賴個人經驗判斷，新人在不熟悉內部圖片體系的情況下，搜尋與回覆成本極高，導致報價流程過度集中於資深人員。</li>
         <li>大量詢價需逐筆人工文字回覆，缺乏半自動化報價輔助機制，客服處理時間成本高。</li>
-      </ul>
+      </ol>
     </div>
     <section class="decision-section">
 
@@ -181,7 +175,7 @@
       <div class="info-card">
         <h4>價值說明</h4>
         <p>
-          將圖片款式比對流程系統化，大幅縮短搜尋與報價判斷時間，<br>降低經驗依賴並提升客服回覆效率。
+          將圖片款式比對流程系統化，大幅縮短搜尋與報價判斷時間，降低經驗依賴並提升客服回覆效率。
         </p>
       </div>
     </div>
@@ -189,22 +183,21 @@
   <!-- ========================= -->
   <!-- 款式搜尋 -->
   <!-- ========================= -->
-  <div class="module-header">
+  <div class="module-header" id="section-style">
   
     <div class="module-badge">款式搜尋</div>
 
     <div class="module-header-main">
-      <h2>以分層分類與標籤條件進行款式快速定位的搜尋模組</h2>
+      <h2>以分層分類與標籤快速定位款式</h2>
     </div>
     </div>
     <p class="module-flow-text">
-      本模組以建檔階段建立的分類與標籤資料為基礎，採用「主分類 → 子分類 → 條件標籤」的分層篩選機制，逐步縮小搜尋範圍，快速定位相似款式。
-      同時支援關鍵字搜尋框，可直接輸入裝飾元素或主題標籤進行查找，提升在大量歷史作品中的搜尋效率與準確度。
+      本模組以建檔階段所建立的分類與標籤資料為基礎，採用「主分類 → 子分類 → 條件標籤」的分層篩選機制，透過逐步縮小搜尋範圍，協助使用者快速定位相似款式。<br>在實際使用情境中，款式搜尋的目的並非單純資料查找，而是為了解決客服在與客人溝通時，缺乏即時提供「視覺參考圖片」的問題。由於多數客人難以用文字精準描述需求，因此圖片成為主要的溝通媒介。<br>基於此，我將本功能設計為一個「以圖片為主的溝通工具」，讓客服能快速瀏覽並挑選相似款式，同時於列表中直接呈現尺寸與價格資訊，提升回覆效率並加速客戶決策流程。<br>此外，系統亦支援關鍵字搜尋功能，可直接輸入裝飾元素或主題標籤（如：兔子、壽桃、翻糖花等）進行查找，提升在大量歷史作品中的搜尋效率與準確度。
     </p>
     <!-- ===== 圖片 ===== -->
  <img src="./assets/images/cake-system-style-search.png" alt="">
  <div class="module-header">
-  <div class="module-badge">結構化條件搜尋模組</div>
+  <div class="module-badge">結構化條件搜尋</div>
 </div>
    <!-- 問題說明 -->
    <div class="problem-block">
@@ -214,7 +207,7 @@
       <li>相同裝飾元素會跨主題重複出現，僅靠主題分類容易漏找。</li>
       <li>人工翻找圖片效率低，且高度依賴資深人員經驗記憶。</li>
       <li>客戶多以關鍵裝飾或圖片描述詢問，傳統分類方式難以快速回應。</li>
-    </ul>
+    </ol>
   </div>
   <section class="decision-section">
 
@@ -263,6 +256,8 @@
     </div>
   </div>
 </main>
-<script src="js/layout.js"></script>
-</body>
-</html>
+
+  <script src="js/layout.js"></script>
+  <script src="js/system-page.js"></script>
+  </body>
+  </html>
