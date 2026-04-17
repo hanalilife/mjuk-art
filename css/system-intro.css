@@ -1757,7 +1757,7 @@ MOBILE OVERRIDE (fix overflow)
 .structure-tags{
   display:flex;
   flex-wrap:wrap;
-  gap:6px 14px;
+  gap:8px 14px;
 }
 
   .structure-tags li{
