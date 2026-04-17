@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>系統總覽</title>
+  <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/system-intro.css" />
+</head>
+<body>
+  <div id="nav-container"></div>
+<!-- =========================
+   HERO
+========================= -->
+
+<section class="hero">
+  <svg class="hero-shape" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <path fill="#EDE7DA" d="M28.9,-21.6C43.6,-14.1,66,-7.1,72.9,6.9C79.9,20.9,71.3,41.8,56.5,55.2C41.8,68.6,20.9,74.4,6.6,67.8C-7.7,61.3,-15.5,42.2,-27.8,28.8C-40.2,15.5,-57.1,7.7,-61.4,-4.3C-65.7,-16.3,-57.4,-32.7,-45,-40.2C-32.7,-47.7,-16.3,-46.4,-4.6,-41.7C7.1,-37.1,14.1,-29.1,28.9,-21.6Z" transform="translate(100 100)" />
+  </svg>
+  <div class="hero__inner">
+
+    <div class="hero__image">
+      <img src="./assets/images/cake.png" alt="Cake Illustration">
+    </div>
+
+    <div class="hero__content">
+      <h1>
+        客製蛋糕圖片建檔 × 智慧搜圖 × 快速報價系統
+      </h1>
+      <p class="hero__subtitle">
+        Custom Cake Image Archive, Search and Quotation System
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================
+   角色說明 + 技術堆疊
+========================= -->
+<section class="role-section">
+  <div class="role-inner">
+    <div class="role-text">
+      <p class="role-desc">
+        本系統由我獨立規劃與主導實作，涵蓋資料結構設計、AI 搜尋整合與前端介面開發。
+        目前已實際部署於客製蛋糕營運環境中使用。
+      </p>
+    </div>
+    <div class="role-stack">
+      <span class="stack-tag">Python</span>
+      <span class="stack-tag">FastAPI</span>
+      <span class="stack-tag">CLIP</span>
+      <span class="stack-tag">PIL</span>
+      <span class="stack-tag">CSV / JSON</span>
+      <span class="stack-tag">HTML / CSS / JS</span>
+      <span class="stack-tag">本地部署</span>
+    </div>
+  </div>
+</section>
+
+<!-- =========================
+   專案背景
+========================= -->
+
+<section class="project-bg">
+
+  <div class="project-bg__header">
+    <span class="bg-pill">專案背景</span>
+    <div class="bg-line"></div>
+  </div>
+
+  <div class="project-bg__content">
+
+    <!-- 左側文字 -->
+    <div class="project-bg__text">
+
+      <p>
+        在客製蛋糕產業中，圖片是報價與溝通的核心依據。<br>
+當作品數量逐年增加，傳統以資料夾與檔名管理圖片的方式，已難以應付實際營運需求，<br>
+進而產生搜尋效率低落、資料分散與報價標準不一致等問題。
+      </p>
+
+      <ul class="problem-list">
+        <li>
+          <img src="./assets/icons/icon-problem.svg" alt="" class="problem-icon">
+          <span>找圖耗時，無法快速比對相似款式</span>
+        </li>
+      
+        <li>
+          <img src="./assets/icons/icon-problem.svg" alt="" class="problem-icon">
+          <span>圖片與資料分散，難以統一管理</span>
+        </li>
+      
+        <li>
+          <img src="./assets/icons/icon-problem.svg" alt="" class="problem-icon">
+          <span>報價缺乏結構化依據，不同人員判斷結果不一致</span>
+        </li>
+      
+        <li>
+          <img src="./assets/icons/icon-problem.svg" alt="" class="problem-icon">
+          <span>作業高度依賴資深人員，人員不在時流程易受影響</span>
+        </li>
+      
+        <li>
+          <img src="./assets/icons/icon-problem.svg" alt="" class="problem-icon">
+          <span>查找參考圖片需仰賴人工記憶與手動翻找</span>
+        </li>
+      </ul>
+    </div>
+    <!-- 右側插圖 -->
+    <div class="project-bg__image">
+      <img src="./assets/images/computer-cake.png" alt="System Illustration">
+    </div>
+  </div>
+  <div class="project-bg__highlight">
+    本系統以「圖片即資料」為核心概念，整合圖片建檔、智慧搜尋與報價輔助功能，協助店家建立結構化的蛋糕資料庫，提升找圖效率、報價一致性與內部協作能力，讓客製流程更加標準化與可擴展。
+  </div>
+</section>
+<section class="pain-section">
+  <div class="pain-header">
+    <h2>圖片管理的真實痛點</h2>
+  </div>
+</section>
+<section class="timeline-section">
+
+  <div class="timeline">
+    <div class="timeline-line"></div>
+    <!-- 1 -->
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <img src="./assets/images/problem-search-slow.png"
+             class="timeline-icon">
+      </div>
+
+      <div class="timeline-center">
+        <div class="timeline-number">1</div>
+      </div>
+
+      <div class="timeline-right">
+        <h3>人工找圖，效率低落且容易漏找</h3>
+        <p>人工逐層翻找資料夾，外觀相似款式容易漏找</p>
+      </div>
+
+    </div>
+
+
+    <!-- 2 -->
+    <div class="timeline-item reverse">
+
+      <div class="timeline-left">
+        <h3>分類標準不一，圖片難以定位</h3>
+        <p>同一張圖片被存放在不同邏輯分類中</p>
+      </div>
+
+      <div class="timeline-center">
+        <div class="timeline-number">2</div>
+      </div>
+
+      <div class="timeline-right">
+        <img src="./assets/images/problem-memory-search.png"
+             class="timeline-icon">
+      </div>
+
+    </div>
+
+
+    <!-- 3 -->
+    <div class="timeline-item">
+
+      <div class="timeline-left">
+        <img src="./assets/images/problem-confused-search.png"
+             class="timeline-icon">
+      </div>
+
+      <div class="timeline-center">
+        <div class="timeline-number">3</div>
+      </div>
+
+      <div class="timeline-right">
+        <h3>客人詢問參考圖，回應成本高</h3>
+        <p>需仰賴人工記憶查找歷史相似作品</p>
+      </div>
+
+    </div>
+
+
+    <!-- 4 -->
+    <div class="timeline-item reverse">
+
+      <div class="timeline-left">
+        <h3>多重分類需求，導致重複存檔與價格不一致</h3>
+        <p>資料量膨脹、版本混亂，增加管理與報價風險</p>
+      </div>
+
+      <div class="timeline-center">
+        <div class="timeline-number">4</div>
+      </div>
+
+      <div class="timeline-right">
+        <img src="./assets/images/problem-data-overload.png"
+             class="timeline-icon">
+      </div>
+
+    </div>
+
+
+    <!-- 5 -->
+    <div class="timeline-item">
+
+      <div class="timeline-left">
+        <img src="./assets/images/problem-time.png"
+             class="timeline-icon">
+      </div>
+
+      <div class="timeline-center">
+        <div class="timeline-number">5</div>
+      </div>
+
+      <div class="timeline-right">
+        <h3>多圖詢問需重複輸入與比對，報價流程冗長</h3>
+        <p>每筆詢價皆需人工查找及回覆</p>
+      </div>
+    </div>
+  </div>
+  <div class="project-bg__highlight">
+    也讓「圖片管理」從輔助工具，變成營運中最隱形、卻最消耗時間的人力成本來源之一。
+  </div>
+</section>
+<section class="solution-section">
+
+  <h2 class="solution-title">
+    如何解決這些問題
+  </h2>
+
+  <p class="solution-desc">
+    為了解決傳統圖片管理與報價流程所帶來的效率瓶頸，我設計並實作了一套結合影像 AI 與結構化資料管理的圖片搜尋與報價系統，將原本仰賴人工記憶與資料夾分類的流程，轉換為可搜尋、可擴充、可維護的系統架構。
+  </p>
+  <div class="solution-container">
+    <!-- 中央圓 -->
+    <div class="solution-center">
+      <div class="circle-big"></div>
+      <div class="circle-mid"></div>
+      <div class="circle-small"></div>
+
+      <div class="circle-text">
+        How I built it</div>
+    </div>
+    <!-- 左上 -->
+    <div class="solution-card card-1">
+      <h3>以圖片搜尋，取代人工翻資料夾</h3>
+      <p>
+        拖曳圖片即可搜尋，透過 CLIP 找出最相似歷史作品，
+        避免漏找與誤判。
+      </p>
+      <div class="highlight">
+        找圖時間：分鐘 → 秒級
+      </div>
+    </div>
+    <!-- 左下 -->
+    <div class="solution-card card-2">
+      <h3>
+        以標籤與結構化分類，取代個人歸檔習慣
+      </h3>
+      <p>
+        透過標籤組合支援多情境搜尋，同一張圖片可跨分類搜尋，
+        不再受限於單一資料夾結構。
+      </p>
+    </div>
+    <!-- 右上 -->
+    <div class="solution-card card-3">
+      <h3>
+        一張圖多角色、多類型，不重複存放
+      </h3>
+      <p>
+        單一圖片透過標籤對應多種分類，
+        無需重複存檔，
+        確保資料唯一性與價格一致。
+      </p>
+    </div>
+    <!-- 右中 -->
+    <div class="solution-card card-4">
+      <h3>
+        自動生成圖表，支援多圖快速報價
+      </h3>
+      <p>
+        多張圖片詢價時自動整理為清單，有效縮短報價處理時間，
+        降低人工輸入負擔。
+      </p>
+    </div>
+    <!-- 下方 -->
+    <div class="solution-card card-5">
+      <h3>
+        即時顯示尺寸與價格，
+        支援快速報價
+      </h3>
+      <p>
+        搜尋結果同步顯示尺寸、高度與價格，
+        客服無需額外查找即可直接回覆報價。
+      </p>
+    </div>
+  </div>
+</section>
+<!-- 系統運作流程 -->
+<section class="workflow-section">
+  <h2 class="workflow-title">系統運作流程</h2>
+  <p class="workflow-desc">
+    本系統以「圖片為入口，資料為核心」設計，
+    將原本仰賴人工判斷與資料夾搜尋的流程，
+    轉換為自動化、可擴充的影像搜尋與報價管線。
+  </p>
+  <div class="workflow-area">
+  <div class="workflow-scale">
+  <!-- S型虛線 -->
+  <svg  class="workflow-svg" width="730" height="1268" viewBox="0 0 730 1268" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M469.966 1.46655C342.133 28.9665 72.9183 97.8665 1.71826 343.467C-2.78174 418.3 48.0659 617.467 304.466 625.467C485.133 619.967 818.066 694.167 704.466 1034.97C678.966 1116.3 555.366 1276.37 264.966 1265.97" stroke="#9C9C9C" stroke-width="3" stroke-dasharray="9 9"/>
+    </svg>
+
+  <!-- 插圖1 -->
+  <img src="./assets/images/workflow-cake-database.png"
+       class="workflow-img img1">
+
+
+  <!-- 插圖2 -->
+  <img src="./assets/images/workflow-search.png"
+       class="workflow-img img2">
+
+
+  <!-- 插圖3 -->
+  <img src="./assets/images/workflow-result.png"
+       class="workflow-img img3">
+
+
+  <!-- 卡片1 -->
+  <div class="flow-card card1">
+    <div class="pin"></div>
+    <div class="card-inner">
+      <div class="step">01</div>
+      <h3>客戶提供圖片</h3>
+      <p>
+        客戶透過LINE提供一張或多張我們款式圖片，作為詢價與設計參考內容。
+      </p>
+    </div>
+  </div>
+
+
+  <!-- 卡片2 -->
+  <div class="flow-card card2">
+    <div class="pin"></div>
+    <div class="card-inner">
+      <div class="step">02</div>
+      <h3>圖片上傳至系統</h3>
+      <p>
+        將圖片拖曳至搜尋介面，系統即時接收圖片檔案，無需預先輸入任何關鍵字或分類。
+      </p>
+    </div>
+  </div>
+
+
+  <!-- 卡片3 -->
+  <div class="flow-card card3">
+    <div class="pin"></div>
+    <div class="card-inner">
+      <div class="step">03</div>
+      <h3>影像向量化</h3>
+      <p>
+        系統使用 CLIP 模型將圖片轉換為向量，
+提取其視覺特徵（角色、造型、色系、構圖等），作為後續比對基礎。
+      </p>
+    </div>
+  </div>
+  <!-- 卡片4 -->
+  <div class="flow-card card4">
+    <div class="pin"></div>
+    <div class="card-inner">
+      <div class="step">04</div>
+      <h3>資料庫搜尋</h3>
+      <p>
+        向量會與資料庫中所有已建檔圖片進行比對，快速找出作品。
+      </p>
+    </div>
+  </div>
+  <!-- 卡片5 -->
+<div class="flow-card card5">
+  <div class="pin"></div>
+  <div class="card-inner">
+    <div class="step">05</div>
+    <h3>回傳搜尋結果與報價資訊</h3>
+    <p>
+      系統同時回傳圖片、尺寸、高度、價格、備註，
+      立即顯示重要資訊，向客戶提供報價與設計參考。
+    </p>
+  </div>
+</div>
+
+
+  </div><!-- /.flow-card card5 -->
+  </div><!-- /.workflow-scale -->
+  </div><!-- /.workflow-area -->
+</section><!-- /.workflow-section -->
+<div class="project-bg__highlight">
+  將原本仰賴人工經驗的找圖與報價流程，轉為可複製、可擴充的系統化能力。
+</div>
+<!-- 系統功能模組 -->
+<section class="modules-section">
+  <h2 class="modules-title">
+    系統功能模組
+  </h2>
+  <p class="modules-desc">
+    將建檔、搜尋、報價與資料管理整合於同一套流程
+  </p>
+<!-- 第一排 -->
+<div class="modules-grid">
+
+  <!-- 建檔 -->
+  <div class="module-card">
+
+    <div class="module-tag">
+      建檔
+    </div>
+    <p>
+      圖片自動轉為結構化資料，
+      快速建立標準檔案
+    </p>
+  </div>
+  <!-- 款式搜尋 -->
+  <div class="module-card">
+    <div class="module-tag">
+      款式搜尋
+    </div>
+    <p>
+      多層分類＋標籤篩選，
+      精準定位不重複
+    </p>
+  </div>
+  <!-- 搜圖 -->
+  <div class="module-card">
+    <div class="module-tag">
+      搜圖
+    </div>
+    <p>
+      上傳圖片即可找出相似作品
+    </p>
+  </div>
+</div>
+<!-- 第二排（置中） -->
+<div class="modules-grid modules-grid-bottom">
+  <!-- 報價 -->
+  <div class="module-card">
+    <div class="module-tag">
+      報價
+      <span class="tag-small">
+        （規劃中）
+      </span>
+    </div>
+    <p>
+      自動帶入尺寸與造型樣式，
+      快速產出報價
+    </p>
+  </div>
+  <!-- 資料修改 -->
+  <div class="module-card">
+    <div class="module-tag">
+      資料修改
+    </div>
+    <p>
+      集中編輯圖片與商品資訊，
+      即時同步
+    </p>
+  </div>
+</div>
+<img src="./assets/images/Candle.png" class="candle">
+</section>
+<!-- =========================
+DATA SECTION
+========================= -->
+
+<section class="data-section">
+  <div class="data-wrap">
+    <div class="data-inner">
+      <div class="data-header">
+        
+        <div class="data-badge">建檔</div>
+        <div class="data-header-main">
+          <h2>圖片轉換為可搜尋、可報價的結構化資料</h2>
+        </div>
+      </div>
+      <div class="data-flow">
+        <div class="data-flow-left">
+          <p class="data-flow-text">建檔模組負責將每張作品圖片轉換為包含製作規格、商業資訊與語意標籤的結構化資料，作為後續圖片搜尋、快速報價與 AI 分析功能的基礎。</p>
+        </div>
+        <div class="data-flow-right">
+          <img class="data-illus" src="./assets/images/data.png" alt="">
+        </div>
+      </div>
+      <img class="data-ui" src="./assets/images/cake-system-build-workflow.png" alt="">
+    </div><!-- /.data-inner -->
+  </div><!-- /.data-wrap -->
+  <!-- 結構化資料設計區 -->
+<section class="data-structure-section">
+
+  <div class="data-structure-wrap">
+  
+  <div class="structure-title">
+  結構化資料設計
+  </div>
+  
+  <div class="structure-card">
+  
+  <h3>規格資料</h3>
+  
+  <div class="structure-divider"></div>
+  
+  <ul class="structure-tags">
+  <li>蛋糕類型</li>
+  <li>層數</li>
+  <li>尺寸・高度</li>
+  <li>產品類別</li>
+  </ul>
+  
+  <p>
+  用於描述作品的實際製作條件，作為圖片搜尋比對、報價估算與 AI 模型學習的重要依據，使系統能同時考量外觀相似度與製作規格合理性。
+  </p>
+  
+  </div>
+  
+  <div class="structure-card">
+  
+  <h3>商業資料</h3>
+  
+  <div class="structure-divider"></div>
+  
+  <ul class="structure-tags">
+  <li>價格</li>
+  <li>難易度</li>
+  <li>備註</li>
+  </ul>
+  
+  <p>
+  將原本仰賴人工經驗的報價邏輯轉換為系統化資料，建立一致的定價基準，降低人為誤差，並作為智慧報價模型的訓練資料來源。
+  </p>
+  
+  </div>
+  
+  <div class="structure-card">
+  
+  <h3>標籤資料</h3>
+  
+  <div class="structure-divider"></div>
+  
+  <ul class="structure-tags">
+  <li>主題</li>
+  <li>次分類</li>
+  <li>子分類</li>
+  <li>角色</li>
+  <li>裝飾</li>
+  <li>常態裝飾</li>
+  </ul>
+  
+  <p>
+  用於描述作品的語意與設計元素，支援跨分類、多情境搜尋，避免傳統資料夾分類造成的重複存檔與資料分散問題，同時提升影像向量搜尋的準確度。
+  </p>
+  
+  </div>
+  
+  <div class="structure-footer">
+  此資料結構使搜尋、報價與 AI 應用能建立於同一套可靠的資料基礎之上。
+  </div>
+  </div>
+  </section><!-- /.data-structure-section -->
+</section><!-- /.data-section -->
+<section class="data-search-section">
+  <div class="data-inner">
+  
+  <div class="data-header">
+  <div class="data-badge">搜圖</div>
+  </div>
+  
+  <p class="data-search-text">
+  系統透過影像向量比對技術，讓使用者可直接上傳客戶提供的蛋糕圖片，快速在資料庫中搜尋歷史作品，立即取得對應款式的尺寸、規格與價格資訊。
+  不再依賴人工逐層翻找資料夾或憑經驗記憶比對，大幅縮短查找時間並降低誤判風險。
+  </p>
+  
+  <img class="data-ui" src="./assets/images/cake-system-search.png">
+  
+  <div class="search-badge">解決</div>
+  
+  <div class="search-grid">
+  
+  <div class="search-card">
+  <h3>以圖片搜尋取代人工翻資料夾</h3>
+  <p>從依賴個人記憶 → 改為系統化影像比對</p>
+  </div>
+  
+  <div class="search-card">
+  <h3>多張圖片詢價，一鍵產出價目清單</h3>
+  <p>快速整理多個參考款式，一次產出價目清單，不需逐一打字回覆，大幅降低報價時間成本。</p>
+  </div>
+  
+  <div class="search-card">
+  <h3>不再受限於命名與分類習慣差異</h3>
+  <p>不論檔名、資料夾結構如何，皆可透過圖片本身快速定位作品。</p>
+  </div>
+  
+  <div class="search-card">
+  <h3>直接複製報價文字，減少重複輸入</h3>
+  <p>系統產生結構化報價內容，可即時複製回覆客人，提升回覆效率。</p>
+  </div>
+  
+  <div class="search-card">
+  <h3>降低單一人員經驗依賴</h3>
+  <p>將資深經驗轉為資料模型，成為可複製的流程能力。</p>
+  </div>
+  </div>
+  </div>
+  </section>
+  <!-- 搜尋款式 -->
+  <section class="style-feature-section">
+  <div class="data-inner">
+  <div class="data-header">
+    <div class="data-badge">款式搜尋</div>
+    <div class="data-header-main">
+      <h2>用結構化條件快速篩選資料庫內容</h2>
+    </div>
+  </div>
+  <p class="data-search-text">
+    款式搜尋提供多條件篩選與關鍵字搜尋功能，讓使用者可依照蛋糕結構、產品類型與設計元素快速找到客戶需求，取代依賴個人記憶或逐層翻找資料夾的方式。
+    搜尋結果以卡片式作品列表呈現，並同步顯示圖片與基本規格資訊，方便快速判讀與比對。
+    </p>
+    <img class="data-ui" src="./assets/images/cake-system-style-search.png">
+</div>
+<!-- =========================
+款式搜尋功能說明區
+========================= -->
+  <div class="style-feature-wrap">
+  
+  <div class="style-feature-topnote">
+  支援多標籤交叉篩選，讓設計元素可被組合搜尋，而非受限於單一分類樹
+  </div>
+  
+  <div class="style-feature-grid">
+  
+  <div class="style-feature-card">
+  <div class="style-number">01</div>
+  <h3>關鍵字搜尋</h3>
+  <p class="style-desc">
+  可搜尋備註與文字描述欄位，支援快速模糊比對
+  </p>
+  <ul>
+  <li>客戶提供特定需求描述</li>
+  <li>查詢特殊製作條件</li>
+  <li>搜尋非標準分類元素</li>
+  </ul>
+  </div>
+  
+  <div class="style-feature-card">
+  <div class="style-number">02</div>
+  <h3>結構條件篩選</h3>
+  <p class="style-desc">
+  用於快速縮小作品結構範圍，優先鎖定可行製作規格
+  </p>
+  <ul>
+  <li>層數</li>
+  <li>蛋糕種類</li>
+  <li>產品類型</li>
+  <li>尺寸類型</li>
+  </ul>
+  </div>
+  
+  <div class="style-feature-card">
+  <div class="style-number">03</div>
+  <h3>設計元素標籤篩選</h3>
+  <p class="style-desc">
+  以多層標籤描述設計元素，支援交叉條件篩選
+  </p>
+  <ul>
+  <li>主題</li>
+  <li>次分類</li>
+  <li>子分類</li>
+  <li>角色</li>
+  <li>裝飾</li>
+  <li>常態裝飾</li>
+  </ul>
+  </div>
+  
+  </div><!-- /.style-feature-wrap -->
+</section><!-- /.style-feature-section -->
+<script src="js/layout.js"></script>
+</body>
+</html>
