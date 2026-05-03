@@ -243,6 +243,30 @@ height:220px;
   line-height:1.8;
 }
 
+.feature-list {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.feature-list li {
+  list-style: disc;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #3f372f;
+}
+
+.desc {
+  font-size: 14px;
+  color: #7a6f63;
+  line-height: 1.6;
+  margin-top: 4px;
+}
+
 /* =========================
 1200px
 ========================= */

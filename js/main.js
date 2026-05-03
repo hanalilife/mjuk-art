@@ -6,20 +6,20 @@ document.addEventListener("DOMContentLoaded", function () {
     if (h < 11) {
       return {
         en: "Good morning",
-        zh: "早安，很高興你來到這裡。"
+        zh: "早安，這是一套讓找圖與報價在10秒內完成的系統"
       };
     }
 
     if (h < 17) {
       return {
         en: "Good afternoon",
-        zh: "午安，很高興你來到這裡。"
+        zh: "午安，這是一套讓找圖與報價在10秒內完成的系統"
       };
     }
 
     return {
       en: "Good evening",
-      zh: "晚安，很高興你來到這裡。"
+      zh: "晚安，這是一套讓找圖與報價在10秒內完成的系統"
     };
   }
 

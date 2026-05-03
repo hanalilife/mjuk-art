@@ -20,7 +20,7 @@ body {
    /* HERO 文字 */
 .hero__title {
   font-family: "Italiana", serif;
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 400;
   padding-top: 60px;
   letter-spacing: 2px;
@@ -30,7 +30,7 @@ body {
 }
 
 .hero__sub {
-  font-size: 16px;
+  font-size: 18px;
   color: #6b5f56;
   margin-bottom: 10px;
 }
@@ -264,7 +264,7 @@ body {
   height:34px;
   border-radius:50%;
   background-color:#e8d9bf;
-  background-image:url("/assets/icons/Instagram\ \(1\).svg");
+  background-image:url("/assets/icons/instagram.svg");
   background-repeat:no-repeat;
   background-position:center;
   background-size:18px;

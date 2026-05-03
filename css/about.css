@@ -345,7 +345,6 @@ Responsive
   width:auto;
   object-fit:contain;
   object-position:right bottom;
-  vertical-align:bottom;
   }
 
   .module-grid{

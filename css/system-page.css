@@ -8,7 +8,9 @@ body {
   color: #5f5246;
 }
 
-/* 模組分頁導覽 */
+/* =========================
+   分頁導覽
+========================= */
 .tab-nav {
   position: sticky;
   top: 80px;
@@ -57,6 +59,9 @@ body {
   transform: scaleX(1);
 }
 
+/* =========================
+   容器
+========================= */
 .container {
   width: 90%;
   max-width: 1100px;
@@ -72,8 +77,10 @@ body {
   display: flex;
   align-items: center;
   gap: 24px;
+  margin-top: 40px;
   margin-bottom: 36px;
 }
+
 .module-header::after {
   content: "";
   position: absolute;
@@ -87,7 +94,6 @@ body {
   z-index: 1;
 }
 
-/* 左邊膠囊 */
 .module-badge {
   background: #a89582;
   color: white;
@@ -99,30 +105,29 @@ body {
   z-index: 2;
 }
 
-/* 右側主標 + 線 */
 .module-header-main h2 {
   font-size: 22px;
   color: #3f372f;
-}
-
-.flow-pill {
-  display: inline-block;
-  background: #a89582;
-  color: white;
-  padding: 6px 35px;
-  border-radius: 999px;
-  margin: 26px auto 16px;
-  font-size: 16px;
 }
 
 .module {
   text-align: left;
 }
 
+/* =========================
+   功能流程膠囊
+========================= */
 .flow-pill {
   display: table;
   margin-left: auto;
   margin-right: auto;
+  background: #a89582;
+  color: white;
+  padding: 6px 35px;
+  border-radius: 999px;
+  margin-top: 26px;
+  margin-bottom: 16px;
+  font-size: 16px;
 }
 
 .module-flow {
@@ -130,13 +135,12 @@ body {
 }
 
 .module-flow-text {
-  font-size: 16px;
-  letter-spacing: 1px;
+  font-size: 20px;
   margin-bottom: 36px;
 }
 
 /* =========================
-   圖片卡片
+   全域圖片
 ========================= */
 img {
   width: 100%;
@@ -144,143 +148,195 @@ img {
   border-radius: 12px;
 }
 
+small {
+  display: block;
+  text-align: center;
+}
+
 /* =========================
-   整個區塊
+   影片區塊（全寬背景）
 ========================= */
 .decision-section {
   background: #ECE5D3;
   width: 100vw;
   margin-left: calc(50% - 50vw);
+  padding: 50px 0;
 }
 
-/* =========================
-   內容寬度控制
-========================= */
-.decision-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 80px 100px;
-}
-
-/* =========================
-   標題
-========================= */
-.section-title {
+.flow-video h3 {
   font-size: 28px;
-  margin-bottom: 18px;
-  position: relative;
-  padding-left: 10px;
-  border-left: #3f372f 2px solid;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.flow-video p {
+  font-size: 18px;
+  text-align: center;
+}
+
+.flow-video-player {
+  width: 95%;
+  max-width: 800px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin: 20px auto 0;
+}
+
+.flow-video-player::-webkit-media-controls {
+  display: none;
 }
 
 /* =========================
-   問題說明
+   Demo 容器（文字 + 影片並排）
 ========================= */
-.problem-block {
-  padding-left: 50px;
-  margin-bottom: 100px;
-}
-
-.problem-block ol {
-  padding-left: 20px;
-  line-height: 2;
-  font-size: 16px;
-}
-
-/* =========================
-   設計決策主區
-========================= */
-.decision-block {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 80px;
+.demo-container {
+  max-width: 1200px;
+  margin: 40px auto 0;
+  display: flex;
+  border: 1px solid #a89582;
+  border-radius: 12px;
+  padding: 60px 70px;
   align-items: center;
+  gap: 40px;
 }
 
-/* 左側文字 */
-.decision-text ul {
-  padding-left: 20px;
-  line-height: 2;
-  font-size: 16px;
+.demo-text {
+  flex: 1;
 }
 
-/* 右側影片 */
-.decision-video video {
+.demo-text h3 {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.demo-text p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #555;
+}
+
+.demo-video {
+  flex: 1;
+}
+
+.demo-video video {
   width: 100%;
   border-radius: 12px;
   display: block;
 }
 
 /* =========================
-   卡片列（置中）
+   Extension Section
 ========================= */
-.card-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+.extension-section {
+  background: #FBF9EF;
+  padding: 90px 20px 110px;
+}
+
+.extension-container {
   max-width: 1100px;
-  margin: 80px auto;
+  margin: 0 auto;
 }
 
-/* =========================
-   卡片樣式（精準還原）
-========================= */
-.info-card {
-  background: #ECE5D3;
-  padding: 40px 36px;
-  padding-bottom: 100px;
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-}
-
-/* 標題 */
-.info-card h4 {
-  margin: 0 0 20px;
-  font-size: 22px;
+.extension-header {
   text-align: center;
-  position: relative;
+  margin-bottom: 42px;
 }
 
-/* 標題底線 */
-.info-card h4::after {
-  content: "";
-  display: block;
+.extension-badge {
+  display: inline-block;
+  background: #A89582;
+  color: #fff;
+  padding: 8px 28px;
+  border-radius: 999px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  margin-bottom: 18px;
+}
+
+.extension-header h2 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #3f372f;
+  margin-bottom: 12px;
+}
+
+.extension-header p {
+  font-size: 15px;
+  color: #7a6c60;
+}
+
+.extension-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.extension-card {
+  background: #ECE5D3;
+  border-radius: 18px;
+  padding: 34px 24px;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+}
+
+.extension-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.extension-icon img {
   width: 100%;
-  height: 2px;
-  background: #A69682;
-  margin: 3px auto 0;
+  height: auto;
+  display: block;
 }
 
-/* 內文 */
-.info-card ul {
-  list-style-position: outside;
-  padding-left: 28px;
-  line-height: 2.4;
+.extension-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #3f372f;
+  margin-bottom: 12px;
 }
 
-.info-card p {
-  line-height: 2;
+.extension-card p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #5f5246;
 }
 
+.extension-summary {
+  margin: 42px auto 0;
+  max-width: 760px;
+  background: #EFE6D6;
+  border-radius: 999px;
+  padding: 18px 28px;
+  text-align: center;
+  color: #7B3A32;
+  font-size: 16px;
+  line-height: 1.7;
+}
 
 /* =========================
-   平板（768px – 1024px）
+   平板（≤ 1024px）
 ========================= */
 @media (max-width: 1024px) {
 
-  /* 導覽列 */
   .tab-nav__item {
     padding: 12px 20px;
     font-size: 14px;
     letter-spacing: 0.5px;
   }
 
-  /* 容器 */
   .container {
     padding: 40px 0 80px;
   }
 
-  /* 模組 Header */
   .module-badge {
     padding: 6px 32px;
     font-size: 18px;
@@ -290,42 +346,6 @@ img {
     font-size: 18px;
   }
 
-  /* decision-inner 縮減內距 */
-  .decision-inner {
-    padding: 60px 48px;
-  }
-
-  /* 標題 */
-  .section-title {
-    font-size: 24px;
-  }
-
-  /* 問題說明 */
-  .problem-block {
-    padding-left: 28px;
-    margin-bottom: 64px;
-  }
-
-  /* 決策區：保持雙欄但縮小間距 */
-  .decision-block {
-    gap: 40px;
-  }
-
-  /* 卡片列：保持雙欄但縮小間距 */
-  .card-row {
-    gap: 32px;
-    margin: 48px auto;
-  }
-
-  .info-card {
-    padding: 32px 28px 72px;
-  }
-
-  .info-card h4 {
-    font-size: 19px;
-  }
-
-  /* flow-pill */
   .flow-pill {
     font-size: 14px;
     padding: 5px 28px;
@@ -334,46 +354,48 @@ img {
   .module-flow-text {
     font-size: 15px;
   }
-}
 
+  .extension-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
 /* =========================
    手機（≤ 767px）
 ========================= */
 @media (max-width: 767px) {
 
-  /* 全域 */
   body {
     padding-top: 60px;
   }
 
-  /* ── 導覽列：置中，項目多時水平捲動 ── */
+  /* 導覽列水平捲動 */
   .tab-nav {
     top: 60px;
-    justify-content: center;
+    justify-content: flex-start;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;        /* Firefox */
+    scrollbar-width: none;
   }
+
   .tab-nav::-webkit-scrollbar {
-    display: none;                /* Chrome / Safari */
+    display: none;
   }
 
   .tab-nav__item {
     padding: 12px 18px;
     font-size: 13px;
     letter-spacing: 0;
-    white-space: nowrap;          /* 防止換行 */
+    white-space: nowrap;
     flex-shrink: 0;
   }
 
-  /* ── 容器 ── */
   .container {
     width: 92%;
     padding: 28px 0 60px;
   }
 
-  /* ── 模組 Header：改成垂直堆疊 ── */
+  /* 模組 Header 垂直堆疊 */
   .module-header {
     flex-direction: column;
     align-items: flex-start;
@@ -381,7 +403,6 @@ img {
     margin-bottom: 24px;
   }
 
-  /* 裝飾線跟著改 */
   .module-header::after {
     left: 0;
     top: auto;
@@ -392,7 +413,6 @@ img {
   .module-badge {
     padding: 6px 24px;
     font-size: 15px;
-    letter-spacing: 1px;
   }
 
   .module-header-main h2 {
@@ -400,11 +420,11 @@ img {
     line-height: 1.5;
   }
 
-  /* ── 流程膠囊 ── */
   .flow-pill {
     font-size: 13px;
     padding: 5px 22px;
-    margin: 20px auto 12px;
+    margin-top: 20px;
+    margin-bottom: 12px;
   }
 
   .module-flow-text {
@@ -413,72 +433,58 @@ img {
     margin-bottom: 24px;
   }
 
-  /* ── decision-inner 大幅縮減內距 ── */
-  .decision-inner {
-    padding: 40px 20px;
+  /* 影片高度自適應 */
+  .flow-video-player {
+    height: auto;
+    width: 95%;
   }
 
-  /* ── 標題 ── */
-  .section-title {
+  .flow-video h3 {
     font-size: 20px;
-    margin-bottom: 14px;
   }
 
-  /* ── 問題說明 ── */
-  .problem-block {
-    padding-left: 16px;
-    margin-bottom: 48px;
+  .flow-video p {
+    font-size: 15px;
+    padding: 0 16px;
   }
 
-  .problem-block ol {
-    font-size: 14px;
-    line-height: 1.9;
-  }
-
-  /* ── 決策區：單欄 ── */
-  .decision-block {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
-  .decision-text ul {
-    font-size: 14px;
-    line-height: 1.9;
-  }
-
-  /* ── 卡片列：單欄 ── */
-  .card-row {
-    grid-template-columns: 1fr;
+  /* Demo 容器改垂直排 */
+  .demo-container {
+    flex-direction: column;
+    padding: 32px 20px;
     gap: 24px;
-    margin: 36px auto;
   }
 
-  .info-card {
-    padding: 28px 22px 56px;
-    border-radius: 16px;
+  .demo-text h3 {
+    font-size: 20px;
   }
 
-  .info-card h4 {
-    font-size: 17px;
-    margin-bottom: 14px;
+  .demo-text p {
+    font-size: 15px;
   }
 
-  .info-card ul {
-    padding-left: 20px;
-    line-height: 2.1;
+  /* Extension */
+  .extension-section {
+    padding: 64px 20px 80px;
   }
 
-  .info-card p {
+  .extension-header h2 {
+    font-size: 18px;
+  }
+
+  .extension-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .extension-summary {
+    border-radius: 18px;
     font-size: 14px;
-    line-height: 1.9;
   }
 
-  /* ── 圖片圓角縮小 ── */
   img {
     border-radius: 8px;
   }
 }
-
 
 /* =========================
    小手機（≤ 375px）
@@ -497,21 +503,5 @@ img {
 
   .module-header-main h2 {
     font-size: 14px;
-  }
-
-  .section-title {
-    font-size: 18px;
-  }
-
-  .decision-inner {
-    padding: 32px 16px;
-  }
-
-  .info-card {
-    padding: 22px 16px 48px;
-  }
-
-  .info-card h4 {
-    font-size: 15px;
   }
 }

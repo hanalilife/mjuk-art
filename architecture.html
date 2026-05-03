@@ -31,8 +31,8 @@
   <div class="node">1</div>
   <div class="icon icon-user"></div>
   <div class="text">
-  <h3>前台操作人員</h3>
-  <p>拖曳客戶圖片搜尋</p>
+  <h3>使用者</h3>
+  <p>上傳客戶提供的參考圖片</p>
   </div>
   </div>
   
@@ -41,7 +41,7 @@
   <div class="icon icon-upload"></div>
   <div class="text">
   <h3>搜尋介面 UI</h3>
-  <p>Drag & Drop 圖片上傳</p>
+  <p>拖曳圖片上傳、搜尋操作流程設計</p>
   </div>
   </div>
   
@@ -50,7 +50,7 @@
   <div class="icon icon-frontend"></div>
   <div class="text">
   <h3>Frontend</h3>
-  <p>HTML / CSS / JS</p>
+  <p>實作使用者操作（拖曳上傳、圖片顯示與互動）</p>
   </div>
   </div>
   
@@ -72,8 +72,8 @@
   <div class="node">4</div>
   <div class="icon icon-api"></div>
   <div class="text">
-  <h3>API呼叫</h3>
-  <p>POST /search</p>
+  <h3>API 請求</h3>
+  <p>前端將圖片送至後端（POST /search）</p>
   </div>
   </div>
   
@@ -81,8 +81,8 @@
   <div class="node">5</div>
   <div class="icon icon-backend"></div>
   <div class="text">
-  <h3>FastAPI Backend</h3>
-  <p>接收圖片</p>
+  <h3>後端服務（FastAPI）</h3>
+  <p>接收圖片，並串接搜尋與比對流程</p>
   </div>
   </div>
   
@@ -105,7 +105,7 @@
   <div class="icon icon-clip"></div>
   <div class="text">
   <h3>CLIP Embedding</h3>
-  <p>影像轉向量表示</p>
+  <p>將圖片轉換為可計算的特徵向量</p>
   </div>
   </div>
   
@@ -114,7 +114,7 @@
   <div class="icon icon-vector"></div>
   <div class="text">
   <h3>向量比對</h3>
-  <p>cosine similarity</p>
+  <p>比較向量相似度，找出最接近的款式</p>
   </div>
   </div>
   
@@ -137,7 +137,7 @@
   <div class="icon icon-csv"></div>
   <div class="text">
   <h3>資料來源</h3>
-  <p>CSV + JSON tags</p>
+  <p>圖片資料、CSV 價格、JSON 標籤</p>
   </div>
   </div>
   
@@ -146,7 +146,7 @@
   <div class="icon icon-result"></div>
   <div class="text">
   <h3>搜尋結果</h3>
-  <p>圖片 + 價格卡</p>
+  <p>回傳款式圖片及資訊</p>
   </div>
   </div>
   
@@ -163,37 +163,42 @@
   
   <tr>
   <td>HTML/CSS/JS</td>
-  <td>可快速客製UI，無框架依賴</td>
+  <td>快速建立可展示的操作介面，方便調整 UI 與互動流程</td>
   </tr>
   
   <tr>
   <td>FastAPI</td>
-  <td>輕量、高效能、快速建立API</td>
+  <td>作為前端與搜尋流程之間的 API 橋樑，負責接收圖片與回傳結果</td>
   </tr>
   
   <tr>
   <td>CLIP</td>
-  <td>可跨風格圖片比對，不依賴標籤</td>
+  <td>可將圖片轉為向量，支援以圖片特徵進行搜尋</td>
   </tr>
+
+  <tr>
+    <td>向量比對</td>
+    <td>用相似度排序，快速找出資料庫中最接近的款式</td>
+    </tr>
   
   <tr>
   <td>CSV</td>
-  <td>現場人員可維護，不需資料庫知識</td>
+  <td>儲存尺寸、價格等結構化資料，方便現場人員維護</td>
   </tr>
   
   <tr>
   <td>JSON tags</td>
-  <td>支援多層標籤關係</td>
+  <td>儲存分類與標籤關係，支援多條件搜尋</td>
   </tr>
   
   <tr>
   <td>本地部署</td>
-  <td>符合公司資料安全需求</td>
+  <td>符合內部資料使用需求，降低資料外流風險</td>
   </tr>
   
   <tr>
-  <td>PIL</td>
-  <td>可直接產生報價圖卡</td>
+  <td>PIL（圖片處理）</td>
+  <td>將搜尋結果圖片整理並輸出為報價用圖</td>
   </tr>
   
   </table>
@@ -207,11 +212,27 @@
   <div class="future-card">
   
   <h3>功能升級</h3>
+  <ul class="feature-list">
+    <li>
+      <div class="title">自動標籤 AI 輔助</div>
+      <div class="desc">
+        自動辨識圖片內容，產生分類與標籤，減少人工建檔時間
+      </div>
+    </li>
   
-  <ul>
-  <li>自動標籤 AI 輔助</li>
-  <li>圖片特徵自動分類</li>
-  <li>價格推薦</li>
+    <li>
+      <div class="title">圖片特徵自動分類</div>
+      <div class="desc">
+        依據圖片風格與裝飾特徵，自動進行分類與整理
+      </div>
+    </li>
+  
+    <li>
+      <div class="title">價格推薦</div>
+      <div class="desc">
+        根據歷史資料，提供相似款式的建議報價範圍
+      </div>
+    </li>
   </ul>
   
   </div>
@@ -221,10 +242,27 @@
   
   <h3>架構演進</h3>
   
-  <ul>
-  <li>雲端部署</li>
-  <li>向量資料庫</li>
-  <li>多資料來源</li>
+  <ul class="feature-list">
+    <li>
+      <div class="title">雲端部署</div>
+      <div class="desc">
+        將系統由本地端轉為雲端服務，支援多人同時使用與遠端存取
+      </div>
+    </li>
+  
+    <li>
+      <div class="title">向量資料庫</div>
+      <div class="desc">
+        提升大量圖片比對效能，支援更快速且可擴展的相似度搜尋
+      </div>
+    </li>
+  
+    <li>
+      <div class="title">多資料來源整合</div>
+      <div class="desc">
+        串接圖片與訂單資料，提供過往案例作為報價依據
+      </div>
+    </li>
   </ul>
   
   </div>
@@ -234,10 +272,27 @@
   
   <h3>產品擴展</h3>
   
-  <ul>
-  <li>設計模組</li>
-  <li>自動估價</li>
-  <li>多語系</li>
+  <ul class="feature-list">
+    <li>
+      <div class="title">設計模組</div>
+      <div class="desc">
+        提供拖曳式設計工具，讓客戶可自訂蛋糕款式
+      </div>
+    </li>
+  
+    <li>
+      <div class="title">自動估價</div>
+      <div class="desc">
+        依據設計內容與歷史資料，提供即時報價建議
+      </div>
+    </li>
+  
+    <li>
+      <div class="title">多語系</div>
+      <div class="desc">
+        支援多語言介面，提升不同市場的使用體驗
+      </div>
+    </li>
   </ul>
   
   </div>
