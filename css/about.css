@@ -291,16 +291,21 @@ Responsive
   @media (max-width:768px){
     body{
       padding-top:69px;
-      overflow:hidden;
+      overflow:auto;
     }
   
   .about-page{
   flex-direction:column;
-  height:calc(100vh - 69px);
-  overflow:hidden;
+  height:auto;
+  min-height:calc(100vh - 69px);
+  overflow:visible;
   }
   
   .about-nav{
+  position:sticky;
+  top:69px;
+  z-index:50;
+  background:#F5F1EE;
   width:100%;
   border-right:none;
   border-bottom:2px solid #bfb6ae;
@@ -318,8 +323,8 @@ Responsive
     align-items:flex-start;
     justify-content:flex-start;
     text-align:left;
-    padding:24px 24px 0;
-    overflow:hidden;
+    padding:24px 24px 60px;
+    overflow:visible;
     }
 
   .about-main.has-image .about-text{
@@ -330,21 +335,21 @@ Responsive
   }
 
   .about-image{
-  align-self:flex-end;
+  align-self:center;
   display:block;
   flex-shrink:0;
-  overflow:hidden;
-  margin-top:auto;
+  overflow:visible;
+  margin-top:24px;
   }
 
   .about-image img{
   display:block;
   height:auto;
-  max-width:55vw;
-  max-height:38vh;
+  max-width:80vw;
+  max-height:none;
   width:auto;
   object-fit:contain;
-  object-position:right bottom;
+  object-position:center bottom;
   }
 
   .module-grid{
@@ -368,7 +373,8 @@ Responsive
   .about-main{
     flex-direction:column;
     align-items:flex-start;
-    padding:24px 16px 0;
+    padding:24px 16px 60px;
+    overflow:visible;
     }
 
   .about-image{
@@ -394,4 +400,3 @@ Responsive
   }
   
   }
-  
